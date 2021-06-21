@@ -26,13 +26,13 @@ const HomePage = () => {
                 </section>
                 <section className="lips">
               <toolBar classname={classes.lipheder}>
-              <Typography classname={classes.liptitle} align='center'  variant={'h3'}>Lips</Typography>
+              <Typography classname={classes.liptitle} align='center' ga  variant={'h3'}>Lips</Typography>
               </toolBar>
               <Lip />
                 </section>
                 <section className="eyes">
                         <toolBar classname={classes.lipheder}>
-                            <Typography classname={classes.liptitle} align='center' variant={'h3'}>Eyes</Typography>
+                            <Typography classname={classes.liptitle} align='center' gutterBottom variant={'h3'}>Eyes</Typography>
                         </toolBar>
                         <Eyes />
                 </section>
