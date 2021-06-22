@@ -18,11 +18,16 @@ function Lip() {
     return(
     
        <div>
-            
-            {products.map(product =>(
-                 <Lips key={product.id} name={product.name} price={product.price} image={product.image} ></Lips>
-            ))}
-         </div>   
+          <Grid container justify= 'center' spacing={4} className={classes.toolbar}>
+                    
+               {products.map(product =>(
+
+                    <Grid item key={product.id} xs ={12} sm={6} md ={4} lg={3}>
+                         <Lips key={product.id} name={product.name} price={product.price} image={product.image} ></Lips>
+                    </Grid>
+               ))}
+        </Grid>
+         </div>  
        
     );
 }
