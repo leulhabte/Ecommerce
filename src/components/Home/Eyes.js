@@ -6,6 +6,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
+
 const useStyles = makeStyles((theme) => ({
     lipactionArea: {
       borderRadius: 16,
@@ -24,8 +25,12 @@ const useStyles = makeStyles((theme) => ({
       },
       },
      eyetitle: {
-         textAlign: 'center',
-         fontFamily: 'Keania One',
+      fontFamily: ['"Playfair Display"', 'serif'].join(','),
+      display: 'flex',
+      justifyContent:'center',
+      textAlign:'center',
+      alignItems: 'center',
+        
          color: '#CEBDB3',
          '&:hover': {
                    
@@ -43,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
                 .darken(0.2)
                 .fade(0.5)}`,
             },
-          
+           
           }),
           eyecontent: ({ color }) => {
             return {
@@ -57,16 +62,21 @@ const useStyles = makeStyles((theme) => ({
              },
             
              eyeButton: {
-                display: 'flex',
+              fontfamily: 'Source Sans Pro', 
+                
                 '&:hover': {
                  color: '#CEBDB3',
-                 flexDirection: 'column',
+                
                 },
                 backgroundcolor: '#CEBDB3',
                 textAlign: 'center'
               },
               eyeprice: {
-                fontFamily: 'Montserrat',
+                   fontFamily: ['"Playfair Display"', 'serif'].join(','),
+                  display: 'flex',
+                  justifyContent:'center',
+                  textAlign:'center',
+                  alignItems: 'center',
                 color: '#000',
                 opacity: 0.87,
                 marginTop: '1rem',
@@ -91,13 +101,14 @@ const useStyles = makeStyles((theme) => ({
                                   </IconButton> 
                                 </div>
                               <div> <CardMedia component='img' image = {eyeimage} /> </div>
+                             
                         </CardActionArea>
                         </div>
                           <Typography className={classes.eyetitle} variant={'h5'}>
                             {eyetitle}
                           </Typography>
-                        <Typography>
-                            <StarIcon/>
+                        <Typography >
+                            <StarIcon />
                             <StarIcon/>
                             <StarIcon/>
                             <StarIcon/>
@@ -160,3 +171,5 @@ const useStyles = makeStyles((theme) => ({
     };
     
     export default Eyes;
+
+   

@@ -25,15 +25,15 @@ const HomePage = () => {
                         face
                 </section>
                 <section className="lips">
-              <toolBar classname={classes.lipheder}>
-              <Typography classname={classes.liptitle} align='center' ga  variant={'h3'}>Lips</Typography>
-              </toolBar>
+             <div>
+              <Typography classname={classes.liptitle} align='center' gutterBottom  variant={'h3'}>Lips</Typography>
+              </div>
               <Lip />
                 </section>
                 <section className="eyes">
-                        <toolBar classname={classes.lipheder}>
+                       <div>
                             <Typography classname={classes.liptitle} align='center' gutterBottom variant={'h3'}>Eyes</Typography>
-                        </toolBar>
+                        </div>
                         <Eyes />
                 </section>
                 <section className="skins">

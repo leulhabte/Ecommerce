@@ -22,18 +22,18 @@ const useGridStyles = makeStyles(({ breakpoints }) => ({
 const useStyles = makeStyles((theme) => ({
   lipactionArea: {
     borderRadius: 16,
-   marginTop: 0,
+
     transition: '0.2s',
     '&:hover': {
       transform: 'scale(1.1)',
     backgroundColor: 'https://img.joomcdn.net/a77f5bd82bd3b3e14cc9c04915081b242d13f530_original.jpeg',
     },
-    marginTop: theme.spacing(4),
+  
     borderRadius: 16,
   },
   lipcard: ({ color }) => ({
     minWidth: 256,
-    marginTop: '1rem',
+    marginTop: theme.spacing(4),
     borderRadius: 16,
     boxShadow: 'none',
     // '&:hover': {
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     //     .fade(0.5)}`,
        
     // },
-  
+    
   }),
   lipcontent: ({ color }) => {
     return {
@@ -52,14 +52,23 @@ const useStyles = makeStyles((theme) => ({
     };
   },
   liptitle: {
-    fontFamily: 'Keania One',
-    fontSize: '2rem',
+    fontFamily: ['"Playfair Display"', 'serif'].join(','),
+    display: 'flex',
+    justifyContent:'center',
+    textAlign:'center',
+    alignItems: 'center',
+    fontSize: '1.5rem',
     color: '#000',
     textTransform: 'uppercase',
    
   },
   lipprice: {
-    fontFamily: 'Montserrat',
+    fontFamily: ['"Playfair Display"', 'serif'].join(','),
+    display: 'flex',
+    justifyContent:'center',
+    textAlign:'center',
+    alignItems: 'center',
+    
     color: '#000',
     opacity: 0.87,
     marginTop: '1rem',
@@ -74,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
    minWidth: 256,
   },
   Button: {
+    fontFamily: ['"Playfair Display"', 'serif'].join(','),
     fontSize: 18,
  color: '#CEBDB3',
  '&:hover': {
@@ -93,13 +103,18 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
       <div>
            <Card className={classes.lipcard}>
            
-                 <div><CardActionArea className={classes.lipactionArea}>
-                 <div>  <Typography justifyContent='end'> 
-                              <IconButton ><FavoriteBorderIcon /></IconButton>
-                            </Typography></div>
-                    <div> <CardMedia component='img' image = {lipimage}  />  </div>
-                   
-                    </CardActionArea></div>
+                 <div>
+                        <div>  
+                              <Typography justifyContent='center'> 
+                                  <IconButton ><FavoriteBorderIcon /></IconButton>
+                                </Typography>
+                            </div>
+                         <CardActionArea className={classes.lipactionArea}>
+                    
+                        <div> <CardMedia component='img' image = {lipimage}  />  </div>
+                      
+                        </CardActionArea>
+                    </div>
               
                   <CardContent className={classes.lipcontent}>
 
