@@ -27,7 +27,7 @@ function Lip() {
                     </Grid>
                ))}
         </Grid>
-         </div>  
+         </div>   
        
     );
 }

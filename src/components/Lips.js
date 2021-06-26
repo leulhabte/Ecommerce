@@ -69,11 +69,12 @@ const useStyles = makeStyles((theme) => ({
  
   media: {
     height: 0,
-   padingTop: '56.25%'
+   paddingTop: '56.25%'
    
   },
   
 }));
+
 
 const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
  // const mediaStyles = useFourThreeCardMediaStyles();
@@ -99,7 +100,7 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
           </Typography>
           <Typography className={classes.lipprice}>price: ${lipprice}</Typography>
           
-          <Typography containt spacing={8}>
+          <Typography  spacing={8}>
             <Button >fav<FavoriteBorderIcon /></Button>
             <Button >add to cart<AddShoppingCartIcon/></Button>
           </Typography>
