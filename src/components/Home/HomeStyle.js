@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     margin: '0.5rem',
     
     },
-    BrushTitle: {  
+    Title: {  
         fontFamily: ['"Playfair Display"', 'serif'].join(','),
         display: 'flex',
         justifyContent:'center',

@@ -6,14 +6,18 @@ import {Typography, Button, Card, CardActions,
      CardContent, CardMedia, AppBar} from '@material-ui/core';
 import Lip from '../Lip';
 import Eyes from './Eyes'
-
+import Navbar from '../Navbar'
+import Brushes from './Brushes'
+import SkinProducts from './Skin/skinProducts'
 const HomePage = () => {
 
     const classes = useStyles()
     return (
         <div>
              <header>
-                  <nav> nav</nav>
+                  <nav> 
+                      <Navbar />
+                  </nav>
 
                   
             </header>
@@ -26,21 +30,27 @@ const HomePage = () => {
                 </section>
                 <section className="lips">
              <div>
-              <Typography classname={classes.liptitle} align='center' gutterBottom  variant={'h3'}>Lips</Typography>
+              <Typography className={classes.Title} align='center' gutterBottom  variant={'h5'}>Lips</Typography>
               </div>
               <Lip />
                 </section>
                 <section className="eyes">
                        <div>
-                            <Typography classname={classes.liptitle} align='center' gutterBottom variant={'h3'}>Eyes</Typography>
+                            <Typography className={classes.Title} align='center' gutterBottom variant={'h5'}>Eyes</Typography>
                         </div>
                         <Eyes />
                 </section>
                 <section className="skins">
-                        skins
+                    <Typography variant="h5" align="center" className={classes.Title} gutterButtom >
+                        Skin
+                    </Typography>
+                        <SkinProducts />
                 </section>
                 <section className="brushes">
-                        brushes
+                    <Typography variant="h5" align='center' className={classes.Title} gutterButtom >
+                        Brushes
+                    </Typography>
+                        <Brushes />
                 </section>
             </main>
             <footer>
