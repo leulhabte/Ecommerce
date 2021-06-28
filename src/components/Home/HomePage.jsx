@@ -3,23 +3,26 @@ import useStyles from './HomeStyle'
 import Lips from '../Lips';
 import {Typography, Button, Card, CardActions, 
     CssBaseline, Toolbar, Container, Grid,
-     CardContent, CardMedia, AppBar} from '@material-ui/core';
-import Lip from '../Lip';
+     CardContent, CardMedia, AppBar} from '@material-ui/core'
+import Lip from '../Lip'
 import Eyes from './Eyes'
+import Navbar from '../Navbar'
+import Brushes from './Brushes'
 
 const HomePage = () => {
 
     const classes = useStyles()
     return (
         <div>
-             <header>
-                  <nav> nav</nav>
 
-                  
+             <nav> 
+                <Navbar />
+             </nav>
+             <header>
             </header>
             <main>
                 <section className="bestseller">
-                            bestseller
+                        bestseller
                 </section>
                 <section className="face">
                         face
@@ -40,7 +43,8 @@ const HomePage = () => {
                         skins
                 </section>
                 <section className="brushes">
-                        brushes
+                    <Typography variant="h5" className={classes.BrushTitle} gutterButtom >Brushes</Typography>
+                    <Brushes />
                 </section>
             </main>
             <footer>

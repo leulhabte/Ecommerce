@@ -88,7 +88,11 @@ const useStyles = makeStyles((theme) => ({
     }));
 
     const CustomCard = ({ classes, eyeimage, eyetitle, eyeprice }) => {
-        
+      const AddtoCart = {
+        fontFamily: ['"Playfair Display"', 'serif'].join(','),
+       fontSize: '18px',
+       backgroundColor: '#CEBDB3',
+     } 
          return (
            <>
           
@@ -96,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
              <Card className={classes.eyecard}>
                   <CardContent className={classes.eyecontent}>
                         <div> <CardActionArea className={classes.eyeactionArea}>
-                              <div> <IconButton   classname={classes.Button} >
+                              <div> <IconButton  style={AddtoCart} classname={classes.Button} >
                                   <FavoriteBorderIcon />
                                   </IconButton> 
                                 </div>
@@ -119,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
                             </Typography>
                         
                         
-                        <IconButton classname={classes.eyeButton}>add to cart<AddShoppingCartIcon/></IconButton>
+                        <IconButton style={AddtoCart} classname={classes.eyeButton}>add to cart<AddShoppingCartIcon/></IconButton>
                      
                   </CardContent>
              </Card>

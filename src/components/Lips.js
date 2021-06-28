@@ -10,14 +10,14 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
 import { BorderOuterRounded } from '@material-ui/icons';
-const useGridStyles = makeStyles(({ breakpoints }) => ({
-  root: {
-    [breakpoints.up('md')]: {
-      justifyContent: 'center',
+// const useGridStyles = makeStyles(({ breakpoints }) => ({
+//   root: {
+//     [breakpoints.up()]: {
+//       justifyContent: 'center',
       
-    },
-  },
-}));
+//     },
+//   },
+// }));
 
 const useStyles = makeStyles((theme) => ({
   lipactionArea: {
@@ -94,8 +94,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
+const CustomCard = ({ classes, lipimage, liptitle, lipprice, hoverimage }) => {
  // const mediaStyles = useFourThreeCardMediaStyles();
+  const AddtoCart = {
+     fontFamily: ['"Playfair Display"', 'serif'].join(','),
+    fontSize: '18px',
+    backgroundColor: '#CEBDB3',
+  } 
+  const hadelevent =(e) => {
+    //backgroundColor: '#CEBDB3',
+   
+    e.target.lipimage=hoverimage
+  }
   return (
     <Grid  >
    <CssBaseline/>
@@ -105,13 +115,13 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
            
                  <div>
                         <div>  
-                              <Typography justifyContent='center'> 
-                                  <IconButton ><FavoriteBorderIcon /></IconButton>
+                              <Typography justifyContent='center' > 
+                                  <IconButton  ><FavoriteBorderIcon /></IconButton>
                                 </Typography>
                             </div>
-                         <CardActionArea className={classes.lipactionArea}>
+                         <CardActionArea  onMouseEnter={hadelevent} className={classes.lipactionArea}>
                     
-                        <div> <CardMedia component='img' image = {lipimage}  />  </div>
+                        <div> <CardMedia component='img' image = {lipimage} />  </div>
                       
                         </CardActionArea>
                     </div>
@@ -130,7 +140,7 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
                     </Typography>
                     <Typography className={classes.lipprice}>price: ${lipprice}</Typography>
                   <Typography > 
-                     <IconButton aria-label="add to cart" classname={classes.Button} >
+                     <IconButton aria-label="add to cart" style={AddtoCart} classname={classes.Button} >
                     add to cart<AddShoppingCartIcon/></IconButton>
                     </Typography>
                   </CardContent>
@@ -143,13 +153,13 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice }) => {
 
 
 
-const Lips = ({name, price, image}) => {
+const Lips = ({name, price, image,  image1}) => {
   
-    const gridStyles = useGridStyles();
+   // const gridStyles = useGridStyles();
     const styles = useStyles({ color: '#fff' });
     return (
         <>
-        <Grid classes={gridStyles} container spacing={4}  xs={12} sm={6} md={4} wrap={'nowrap'}>
+        <Grid  container spacing={4}  xs={12} sm={6} md={4} wrap={'nowrap'}>
           <Grid item>
         
             <CustomCard
@@ -157,6 +167,7 @@ const Lips = ({name, price, image}) => {
               liptitle={name}
               lipprice={price}
               lipimage={image}
+              hoverimage={image1}
             />
           </Grid>
         

@@ -4,7 +4,11 @@ export default makeStyles((theme) => ({
 
     liptitle: {
     color: '#CEBDB3',
-    fontFamily: 'Keania One',
+    fontFamily: ['"Playfair Display"', 'serif'].join(','),
+    display: 'flex',
+    justifyContent:'center',
+    textAlign:'center',
+    alignItems: 'center',
     fontSize: '2rem',
     },
     lipheder: {
