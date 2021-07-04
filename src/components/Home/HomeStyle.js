@@ -16,7 +16,7 @@ export default makeStyles((theme) => ({
         fontFamily: ['"Playfair Display"', 'serif'].join(','),
         display: 'flex',
         justifyContent:'center',
-        textAlign:'center',
+        // textAlign:'center',
         alignItems: 'center',
     },
    

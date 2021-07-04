@@ -130,7 +130,7 @@ nav {
   .searchSpace {
     border: none;
     background: rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 0px;
     transition: 0.4s;
     color: black;
     padding: 5px;

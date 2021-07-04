@@ -17,9 +17,7 @@ const HomePage = () => {
              <header>
                   <nav> 
                       <Navbar />
-                  </nav>
-
-                  
+                  </nav>      
             </header>
             <main>
                 <section className="bestseller">
@@ -36,11 +34,13 @@ const HomePage = () => {
                 </section>
                 <section className="eyes">
                        <div>
-                            <Typography className={classes.Title} align='center' gutterBottom variant={'h5'}>Eyes</Typography>
+                            <Typography className={classes.Title} align='center' gutterBottom variant={'h5'}>
+                                Eyes
+                            </Typography>
                         </div>
                         <Eyes />
                 </section>
-                <section className="skins">
+                <section className="skins" style={{marginLeft:'20px', marginRight: '20px'}}>
                     <Typography variant="h5" align="center" className={classes.Title} gutterButtom >
                         Skin
                     </Typography>
@@ -50,7 +50,7 @@ const HomePage = () => {
                     <Typography variant="h5" align='center' className={classes.Title} gutterButtom >
                         Brushes
                     </Typography>
-                        <Brushes />
+                    <Brushes />
                 </section>
             </main>
             <footer>

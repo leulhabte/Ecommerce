@@ -1,17 +1,19 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  root: {
-    maxWidth: '100%',
-    marginLeft: '10px',
-    marginRight: '10px',
-    // position:'relative',
-    height: '100%',
+  // root: {
+  //   maxWidth: '100%',
+  //   marginLeft: '10px',
+  //   marginRight: '10px',
+  //   // position:'relative',
+
     
-  },
-  media: {
-    height: 0,
-    paddingTop: '100%',
+  // },
+  skinProducts: {
+    position: 'relative',
+  
+    overflow: 'hidden',
+    marginTop: '90px'
   },
   cardActions: {
     display: 'flex',
@@ -28,10 +30,14 @@ export default makeStyles((theme) => ({
     border: '1px solid lightgrey',
     backgroundColor: 'white',
   },
+  skinProductsImage: {
+    
+  },
   skinImages: {
-    // width: '200px',
-    // height: '300px',
-  
+    margin: 'auto',
+    width: '100%',
+    heigth: '900px', 
+    objectFit: 'cover'   
   }
 
 }));

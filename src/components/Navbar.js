@@ -30,6 +30,7 @@ const Navbar = () => {
                             <FaBars />
                         </button>
                     </div>
+                    
                     <div className='links-container show-container' ref={linksContainerRef}>
                         <ul className='links' ref={linksRef}>
                             {links.map((link) => {
