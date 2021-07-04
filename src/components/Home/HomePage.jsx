@@ -17,9 +17,10 @@ const HomePage = () => {
     return (
         <div>
              <header>
-                  <nav> 
+                  {/* <nav> 
                       <Navbar />
-                  </nav>      
+                  </nav>       */}
+                  <Hero/>
             </header>
             <main>
                 <section className="bestseller">
