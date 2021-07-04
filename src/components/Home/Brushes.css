@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@1&display=swap");
+
+.Brushes {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.Brush {
+  background-color: #c6f850;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.brush-product-details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.25s ease-out;
+  font-size: 20px;
+  opacity: 0;
+}
+.Brush-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.brush-product-details button {
+  border: none;
+  background-color: #eccdc7;
+  padding: 5px;
+  font-size: 18px;
+  letter-spacing: 0.5rem;
+  font-family: "Castoro", serif;
+  margin: 10px;
+}
+.brush-product-details button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: bold;
+}
+.brush-product-details:hover {
+  opacity: 1;
+}
+.brush-product-details > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+.brush-product-details:hover > * {
+  transform: translateY(0);
+}
+.Brush-description {
+  text-align: center;
+  color: white;
+  font-family: "Castoro", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+.Brush-description h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.Brush-description span {
+  margin-top: 10px;
+}
+.Brushes .one {
+  background-image: url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZSUyMGJydXNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  height: 600px;
+}
+.Brushes .two {
+  background-image: url("https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTNz7RER0gIL20Xe6ech4Y0IzqPxHoXWOpR5m_xrvVp7Q2quuOkp-SpeOZw1qdPLvrQGto0J6U&usqp=CAE");
+  /* background-image: url("https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQMgVI0nYuHU9BNCN8sg_dxx01j3pz4QngA03D1pcQuQbWTR3xOO2xlsMhMsN2_zw0RSzkFRz8&usqp=CAE"); */
+}
+.Brushes .three {
+  background-image: url("https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRmDYVxiM6FwKYElJOt5tSj85FgAHQFbUvlOOqw7uNGJnASLD6IyXIJL1u6_fSK64i4iu27kE7S&usqp=CAE");
+}
+.Brushes .four {
+  background-image: url("https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTP1IXhgUjUZ5jL17jVChnJc8bzIk7vt92A6Iu-ntBLX1tyjBpiWD81xoPkGroO3bWPNxRHIHWO&usqp=CAE");
+}
+@media (min-width: 767px) {
+  .Brushes .one {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+  .Brushes .two {
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .Brushes {
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

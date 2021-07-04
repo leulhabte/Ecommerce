@@ -18,10 +18,8 @@ const HomePage = () => {
         <div>
              <header>
                   <nav> 
-                      {/* <Navbar /> */}
-                  </nav>
-
-                  <Hero/>
+                      <Navbar />
+                  </nav>      
             </header>
             <main>
                 <section className="bestseller">
@@ -31,22 +29,30 @@ const HomePage = () => {
                         face
                 </section>
                 <section className="lips">
-              <toolBar classname={classes.lipheder}>
-              <Typography classname={classes.liptitle} align='center'  variant={'h3'}>Lips</Typography>
-              </toolBar>
+             <div>
+              <Typography className={classes.Title} align='center' gutterBottom  variant={'h5'}>Lips</Typography>
+              </div>
               <Lip />
                 </section>
                 <section className="eyes">
-                        <toolBar classname={classes.lipheder}>
-                            <Typography classname={classes.liptitle} align='center' variant={'h3'}>Eyes</Typography>
-                        </toolBar>
+                       <div>
+                            <Typography className={classes.Title} align='center' gutterBottom variant={'h5'}>
+                                Eyes
+                            </Typography>
+                        </div>
                         <Eyes />
                 </section>
-                <section className="skins">
-                        skins
+                <section className="skins" style={{marginLeft:'20px', marginRight: '20px'}}>
+                    <Typography variant="h5" align="center" className={classes.Title} gutterButtom >
+                        Skin
+                    </Typography>
+                        <SkinProducts />
                 </section>
                 <section className="brushes">
-                        brushes
+                    <Typography variant="h5" align='center' className={classes.Title} gutterButtom >
+                        Brushes
+                    </Typography>
+                    <Brushes />
                 </section>
             </main>
             <footer>

@@ -1,12 +1,10 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import Skinproduct from './skinProduct'
-//import Carousel from 'react-elastic-carousel'
+import Carousel from 'react-elastic-carousel'
 import {Typography, Button, Card, CardActions, 
     CssBaseline, Toolbar, Container,
-    
      CardContent, CardMedia, AppBar, IconButton} from '@material-ui/core'
-import Carousel from 'react-elastic-carousel'
 const Products = [
     {
         id: 1,
@@ -102,7 +100,6 @@ const SkinProducts = () => {
         letterSpacing: '0.5rem'
     }
 return (
-
         <> 
                 <Carousel breakPoints={breakPoints} styles={{marginTop: '900px'}}>
                 {Products.map((product) => {
