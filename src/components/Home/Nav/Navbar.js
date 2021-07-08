@@ -21,8 +21,8 @@ const Navbar = () => {
   }, [showLinks]);
 
     return (
-        <nav >
-               <div className='nav-container'>
+        <nav style={{position:'sticky'}}>
+               <div className='nav-container' >
                 <div className="nav-center">
                     <div className="nav-header">
                         <h5 className="nav-logo">DJFS</h5>
