@@ -29,7 +29,7 @@ const HomePage = () => {
                 </section>
                 <section className="lips">
              <div>
-              <Typography classname={classes.liptitle} align='center' gutterBottom  variant={'h3'}>Lips</Typography>
+              <Typography className={classes.liptitle} align='center' gutterBottom  variant={'h3'}>Lips</Typography>
               </div>
               <Lip />
                 </section>
