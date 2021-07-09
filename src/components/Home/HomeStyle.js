@@ -19,6 +19,9 @@ export default makeStyles((theme) => ({
         // textAlign:'center',
         alignItems: 'center',
     },
+    skins: {
+        fontFamily: ['"Roboto Slab"', 'serif'].join(',')
+    }
    
 }));
 

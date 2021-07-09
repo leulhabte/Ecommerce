@@ -58,7 +58,7 @@ nav {
 .nav-logo {
   height: 40px;
   font-size: 28px;
-  color: #eccdc7;
+  color: #ffaaaa;
   font-family: "Orbitron", sans-serif;
   padding: 5px;
   border-radius: 5px;
@@ -163,7 +163,6 @@ nav {
   }
   .nav-logo {
     height: 40px;
-    color: #eccdc7;
     font-family: "Orbitron", sans-serif;
     border-radius: 5px;
   }
