@@ -3,7 +3,7 @@ import Color from 'color';
 //import GoogleFont from 'react-google-font-loader';
 import { makeStyles } from '@material-ui/core/styles';
 //import NoSsr from '@material-ui/core/NoSsr';
-import {Grid, CssBaseline, Typography, Card, CardActionArea, CardContent, CardMedia, IconButton   }from '@material-ui/core';
+import {Grid, Button, CssBaseline, Typography, Card, CardActionArea, CardContent, CardMedia, IconButton   }from '@material-ui/core';
 //import { useFourThreeCardMediaStyles } from '@mui-treasury/styles/cardMedia/fourThree';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -29,13 +29,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'https://img.joomcdn.net/a77f5bd82bd3b3e14cc9c04915081b242d13f530_original.jpeg',
     },
   
-    borderRadius: 16,
   },
-  lipcard: ({ color }) => ({
+  lipcard: () => ({
     minWidth: 256,
-    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
     borderRadius: 16,
     boxShadow: 'none',
+    padding: 'none',
+    background: 'none',
     // '&:hover': {
     //   boxShadow: `0 6px 12px 0 ${Color(color)
     //     .rotate(-12)
@@ -45,61 +46,40 @@ const useStyles = makeStyles((theme) => ({
     // },
     
   }),
-  lipcontent: ({ color }) => {
+  lipcontent: () => {
     return {
-      backgroundColor: color,
+    justifyContent: 'center', 
+    textAlign:'center',
+    alignItems: 'center',
       padding: '1rem 1.5rem 1.5rem',
+     
     };
   },
   liptitle: {
-    fontFamily: ['"Playfair Display"', 'serif'].join(','),
-    display: 'flex',
-    justifyContent:'center',
-    textAlign:'center',
-    alignItems: 'center',
-    fontSize: '1.5rem',
+    fontFamily: ["'Benne'", 'serif'].join(','),
+    
+    //fontSize: '1.5rem',
     color: '#000',
     textTransform: 'uppercase',
    
   },
   lipprice: {
-    fontFamily: ['"Playfair Display"', 'serif'].join(','),
-    display: 'flex',
-    justifyContent:'center',
-    textAlign:'center',
-    alignItems: 'center',
-    
-    color: '#000',
-    opacity: 0.87,
-    marginTop: '1rem',
-    fontWeight: 500,
-    fontSize: 18,
-   
+    fontFamily: ["'Benne'", 'serif'].join(','), 
   },
- 
-  media: {
-    height: 0,
-  fontSize: 18,
-   minWidth: 256,
-  },
-  Button: {
-    fontFamily: ['"Playfair Display"', 'serif'].join(','),
-    fontSize: 18,
- color: '#CEBDB3',
- '&:hover': {
-  backgroundColor: '#CEBDB3',
-   
-},
-  },
+  icon: {
+    backgroundColor: 'none',
+  }
 }));
 
 
 const CustomCard = ({ classes, lipimage, liptitle, lipprice, hoverimage }) => {
  // const mediaStyles = useFourThreeCardMediaStyles();
   const AddtoCart = {
-     fontFamily: ['"Playfair Display"', 'serif'].join(','),
-    fontSize: '18px',
-    backgroundColor: '#CEBDB3',
+    fontFamily: ["'Benne'", 'serif'].join(','),
+     border: '1px solid lightgrey',
+       
+   // backgroundColor: '#eccdc7',
+    marginTop: '1rem',
   } 
   const hadelevent =(e) => {
     //backgroundColor: '#CEBDB3',
@@ -107,28 +87,37 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice, hoverimage }) => {
     e.target.lipimage=hoverimage
   }
   return (
-    <Grid  >
-   <CssBaseline/>
+    
+  
   
       <div>
-           <Card className={classes.lipcard}>
-           
-                 <div>
-                        <div>  
-                              <Typography justifyContent='center' > 
+        <Card className={classes.lipcard}>
+        <div>  
+                              <Typography className={classes.icon} justifyContent='center' > 
                                   <IconButton  ><FavoriteBorderIcon /></IconButton>
                                 </Typography>
                             </div>
+          <div style={{width: '100%',height: "320px", }} >
+                        <img src={lipimage} style={{width: '100%',height: "320px", }}
+                         onMouseOver={e => (e.currentTarget.src = hoverimage)} 
+                         onMouseOut={e => (e.currentTarget.src = lipimage)} objectFit = 'cover' alt="This is product" />
+      
+                
+            </div>    
+           
+           
+                     <div>
+                             
                          <CardActionArea  onMouseEnter={hadelevent} className={classes.lipactionArea}>
                     
-                        <div> <CardMedia component='img' image = {lipimage} />  </div>
+                       
                       
                         </CardActionArea>
                     </div>
               
                   <CardContent className={classes.lipcontent}>
 
-                    <Typography className={classes.liptitle} variant={'h2'}>
+                    <Typography className={classes.liptitle} variant="body1">
                       {liptitle}
                     </Typography>
                     <Typography>
@@ -138,16 +127,16 @@ const CustomCard = ({ classes, lipimage, liptitle, lipprice, hoverimage }) => {
                       <StarIcon/>
                       <StarBorderIcon/>
                     </Typography>
-                    <Typography className={classes.lipprice}>price: ${lipprice}</Typography>
+                    <Typography className={classes.lipprice} variant="body1">${lipprice}</Typography>
                   <Typography > 
-                     <IconButton aria-label="add to cart" style={AddtoCart} classname={classes.Button} >
-                    add to cart<AddShoppingCartIcon/></IconButton>
+                     <Button aria-label="add to cart" style={AddtoCart} classname={classes.Button} >
+                    add to cart<AddShoppingCartIcon/></Button>
                     </Typography>
                   </CardContent>
 
             </Card>
       </div>
-   </Grid>
+  
   );
 };
 

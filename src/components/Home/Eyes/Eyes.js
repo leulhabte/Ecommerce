@@ -1,7 +1,7 @@
 import React from 'react';
 import Color from 'color';
 import { makeStyles } from '@material-ui/core/styles';
-import {Grid, Typography, Card, CardActionArea, CardContent, CardMedia, IconButton  }from '@material-ui/core';
+import {Grid, Typography, Card, CardActionArea, CardContent, CardMedia, Button, IconButton  }from '@material-ui/core';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
@@ -25,18 +25,13 @@ const useStyles = makeStyles((theme) => ({
       },
       },
      eyetitle: {
-      fontFamily: ['"Playfair Display"', 'serif'].join(','),
+      fontFamily: ["'Benne'", 'serif'].join(','),
       display: 'flex',
       justifyContent:'center',
       textAlign:'center',
       alignItems: 'center',
         
-         color: '#CEBDB3',
-         '&:hover': {
-                   
-           color: '#000',
-           
-            },
+        
         },
         eyecard: ({ color }) => ({
             minWidth: 256,
@@ -52,62 +47,67 @@ const useStyles = makeStyles((theme) => ({
           }),
           eyecontent: ({ color }) => {
             return {
-                '&:hover': {
+                
                    
-                 
-                   
-                    },
+                  justifyContent: 'center', 
+                  textAlign:'center',
+                  alignItems: 'center',
                     padding: '1rem 1.5rem 1.5rem',
+                  
             };
              },
             
-             eyeButton: {
-              fontfamily: 'Source Sans Pro', 
-                
-                '&:hover': {
-                 color: '#CEBDB3',
-                
-                },
-                backgroundcolor: '#CEBDB3',
-                textAlign: 'center'
-              },
+           
               eyeprice: {
-                   fontFamily: ['"Playfair Display"', 'serif'].join(','),
+                fontFamily: ["'Benne'", 'serif'].join(','), 
                   display: 'flex',
                   justifyContent:'center',
                   textAlign:'center',
                   alignItems: 'center',
                 color: '#000',
                 opacity: 0.87,
-                marginTop: '1rem',
-                fontWeight: 500,
-                fontSize: 18,
+               
+                // fontWeight: 500,
+                // fontSize: 18,
                
               },
-              
+              icon:{
+                alignItems: 'left',
+              },
+
+              col2: {
+            height: '250px',
+              }
     }));
 
-    const CustomCard = ({ classes, eyeimage, eyetitle, eyeprice }) => {
+    const CustomCard = ({ classes, eyeimage, eyetitle, eyeprice, hoverimage }) => {
       const AddtoCart = {
-        fontFamily: ['"Playfair Display"', 'serif'].join(','),
-       fontSize: '18px',
-       backgroundColor: '#CEBDB3',
+       
+        fontFamily: ["'Benne'", 'serif'].join(','), 
+       marginTop: '1rem',
+       border: '1px solid lightgrey',
      } 
          return (
            <>
-          
+           
           
              <Card className={classes.eyecard}>
-                  <CardContent className={classes.eyecontent}>
-                        <div> <CardActionArea className={classes.eyeactionArea}>
-                              <div> <IconButton  style={AddtoCart} classname={classes.Button} >
+                 
+                         <CardActionArea className={classes.eyeactionArea}>
+                               <IconButton className={classes.icon}   >
                                   <FavoriteBorderIcon />
                                   </IconButton> 
-                                </div>
-                              <div> <CardMedia component='img' image = {eyeimage} /> </div>
-                             
+                                
+                               {/* <CardMedia component='img' image = {eyeimage} /> */}
+                    <div style={{width: '100%',height: "320px", }} >
+                        <img src={eyeimage} style={{width: '100%',height: "320px", }}
+                         onMouseOver={e => (e.currentTarget.src = hoverimage)} 
+                         onMouseOut={e => (e.currentTarget.src = eyeimage)} objectFit = 'cover' alt="This is product" />
+      
+                
+                    </div>   
                         </CardActionArea>
-                        </div>
+                        <CardContent className={classes.eyecontent}>
                           <Typography className={classes.eyetitle} variant={'h5'}>
                             {eyetitle}
                           </Typography>
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
                             </Typography>
                         
                         
-                        <IconButton style={AddtoCart} classname={classes.eyeButton}>add to cart<AddShoppingCartIcon/></IconButton>
+                        <Button style={AddtoCart} classname={classes.eyeButton}>add to cart<AddShoppingCartIcon/></Button>
                      
                   </CardContent>
              </Card>
@@ -134,11 +134,13 @@ const useStyles = makeStyles((theme) => ({
        const Eyes = () => {
   
         const classes = useStyles();
-        const styles = useStyles({ color: '#CEBDB3' });
+        const styles = useStyles({ 
+          height: '100%',
+       });
         return (
             <>
             <div>
-            <Grid className={classes.container} container spacing={4}  wrap={'nowrap'} >
+            <Grid className={classes.container} justify= 'center' container spacing={4}  wrap={'nowrap'} >
            
                     <Grid item >
                   
@@ -147,24 +149,27 @@ const useStyles = makeStyles((theme) => ({
                         eyetitle='eye lashes'
                         eyeprice= 'price: $50'
                         eyeimage='https://cdn.shopclues.com/images1/thumbnails/99135/640/1/145353082-99135635-1555518256.jpg'
+                        hoverimage='https://image.made-in-china.com/202f0j00EGtUmSHPIIgV/2020-Most-Popular-Lashes-Styles-Free-Sample-False-Eyelashes-M01-M18-3D-Real-Mink-Fur-Eyelash-with-Brush.jpg'
                         />
                     </Grid>
-                    <Grid item className={classes.cont2} >
+                    <Grid item  >
                     
                     <CustomCard
                     classes={styles}
                     eyetitle='eye shadow'
                     eyeprice= 'price: $80'
-                    eyeimage='https://images-na.ssl-images-amazon.com/images/I/71mki%2BnXFmL._SY355_.jpg'
-                    />
+                    eyeimage='https://sc04.alicdn.com/kf/H7e63c8388967499a8794c67cb4dd382cn.jpg'
+                   hoverimage='https://i.pinimg.com/originals/db/c1/75/dbc175acebe912699086dc8c79940eee.jpg'
+                   />
                 </Grid>
-                <Grid item >
+                <Grid item  >
                     
                     <CustomCard
                     classes={styles}
                     eyetitle='eye brow enhancer'
                     eyeprice= 'price: $60'
-                    eyeimage='https://img.joomcdn.net/62f31f0e4302d4aaf4823de5f6d0c9c4685be1b8_original.jpeg'
+                    eyeimage='https://img.makeupalley.com/thumb/h/350/0_0_0_1_3644908.jpeg'
+                    hoverimage='https://media.istockphoto.com/vectors/various-types-of-eyebrows-eyebrows-isolated-on-white-background-black-vector-id1291159894'
                     />
                 </Grid>
                 
