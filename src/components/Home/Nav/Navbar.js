@@ -58,7 +58,9 @@ const Navbar = () => {
                        <FaShoppingCart />
                        <span>0</span>
                    </li>
-                   <li className="nav-icon"><FaUser /></li>
+                   <li className="nav-icon">
+                    <FaUser />
+                       </li>
                 </ul>             
                    
                 </div>
