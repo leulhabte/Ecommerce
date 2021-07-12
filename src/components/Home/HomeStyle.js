@@ -42,7 +42,7 @@ export default makeStyles((theme) => ({
    },
    face:{
     //margin:'50px auto',
-       //padding:'5rem 0'
+       paddingBottom:'5rem',
        margin:'100px 0',
        backgroundColor: 'rgb(247,234, 232)'
    }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Grid  } from '@material-ui/core'
+import React,{useState,useEffect} from 'react'
+import { Grid,Button, Typography  } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import Face from './Face'
 import img from './face8.jpg'
@@ -8,9 +8,19 @@ import img3 from './toner.jpg'
 import img4 from './lipstick1.jpg'
 import img5 from './mascara.jpg'
 const Faces = () => {
+  const [fav_color,setFavColor] = useState(false)
+  const [btnVisible,setBtnVisible] = useState(false)
+  const [isMobile,setIsMobile] = useState(false)
+  useEffect(() => {
+   
+    window.addEventListener("resize", () => {
+        const ismobile = window.innerWidth < 960;
+        if (ismobile !== isMobile) setIsMobile(ismobile);
+    }, false);
+  }, [isMobile])
     const useStyles = makeStyles((theme) => ({
         root: {
-         
+         position:'relative'
         },
         left:{
           maxWidth: 400,
@@ -19,13 +29,22 @@ const Faces = () => {
           overflowX:'auto',
         //margin:'10px',
          borderRadius:0,
-         backgroundImage:`url(${img})`,
-         backgroundSize:'cover',
-         backgroundPosition:'right',
-        //backgroundColor:'#555',
-         height:'500px',
-
-    
+        //  backgroundImage:`url(${img})`,
+        //  backgroundSize:'cover',
+        //  backgroundPosition:'right',
+        backgroundColor:'#555',
+         height:'500px',    
+         position:'relative'
+        },
+        bestSell_desc:{
+            color:'#FFAAAA',
+            textAlign:'center',
+            position: 'absolute',
+            top: '40%',
+            margin:'0 15px',
+            marginRight:'20px',
+            fontWeight:'bold',
+            textTransform:'capitalize'
         },
         right:{
           display: 'flex',
@@ -44,10 +63,50 @@ const Faces = () => {
             '&::-webkit-scrollbar-thumb': {
               backgroundColor: 'darkgray',
               //outline: '1px solid slategrey'
-            }}
+            }},
+            btn:{
+              margin:'45px auto',
+              position: 'absolute',
+              left: '15%',
+              textTransform:'uppercase',
+              padding: '15px',
+              width: '250px',
+              top:'50%',
+              backgroundColor:'#FFAAAA',
+              color:'#fff',
+              fontWeight:'bold',
+              boxShadow:'none',
+              '&:hover': {
+                  backgroundColor: '#fff',
+                  color:'#FFAAAA',
+                  boxShadow: '0 0 0 0.2rem #FFAAAA',
+                },
+              
+          },
+          btn1:{
+            //margin:'45px auto',
+            position: 'absolute',
+            left: '50%',
+            textTransform:'uppercase',
+            //bottom:'0px',
+            padding: '15px',
+            width: '250px',
+           // top:'50%',
+            visibility:'hidden',
+            backgroundColor:'#FFAAAA',
+            color:'#fff',
+            fontWeight:'bold',
+            boxShadow:'none',
+            '&:hover': {
+                backgroundColor: '#fff',
+                color:'#FFAAAA',
+                boxShadow: '0 0 0 0.2rem #FFAAAA',
+              },
+            
+        }
       }));
-      const classes = useStyles();
-      const data = [
+    const classes = useStyles();
+    const data = [
         {
             "id":1,
             "name" : "Nuface",
@@ -89,12 +148,36 @@ const Faces = () => {
 
         }
     ]
+    
+  const handlebtnVisibility = () =>{
+    isMobile ?  setBtnVisible(true) : setBtnVisible(false)
+  }
+  const handlebtnHide = () =>{
+    setBtnVisible(false)
+  } 
+    const getLookBtn = (
+      <Button variant="contained" size="medium" disableElevation 
+       className={classes.btn} 
+        // style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
+      onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
+      > Buy Now</Button>
+    );
+    const viewMoreBtn = (
+      <Button variant="contained" size="Large" disableElevation 
+        className={classes.btn1} 
+         style ={{visibility : isMobile ? 'visible' : 'hidden'}}
+      onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
+      > Buy Now </Button>
+    )
     return (
         <div className={classes.root}>
           <Grid container>
             <Grid item xs={0} md={4}>
               <div className={classes.left}>
-                
+                  <Typography variant="h5" color='textSecondary' className={classes.bestSell_desc}>
+                    Check out our best selling products
+                  </Typography>
+                  {getLookBtn}
                 </div>
             </Grid>
             <Grid item xs={12} md={8}>
@@ -117,7 +200,8 @@ const Faces = () => {
             
              
           </Grid>
-             
+          {viewMoreBtn}
+          
         </div>
        
     )

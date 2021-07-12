@@ -1,14 +1,13 @@
 import React,{useState} from 'react'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import {Typography,Modal} from '@material-ui/core'
+import {Typography,Modal,Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import img from './cleanser.jpg'
 import { Favorite } from '@material-ui/icons';
 const BestSeller = ({product}) => {
       
-  const [fav_color,setFavColor] = useState('')
-  const [modalStyle] = useState(getModalStyle);
-  const [open, setOpen] = useState(false);
+  const [fav_color,setFavColor] = useState(false)
+  const [btnVisible,setBtnVisible] = useState(false)
 const useStyles = makeStyles((theme) => ({
     root: {
      maxWidth: 350,
@@ -43,56 +42,71 @@ const useStyles = makeStyles((theme) => ({
     icon:{
       position:'absolute',
       bottom:'2px',
-      right:'5px'
-    }
+      right:'5px',
+      color:'red'
+    },
+    icon2:{
+      position:'absolute',
+      bottom:'2px',
+      right:'5px',
+      color:'#666'
+    },
+    btn:{
+     margin:'0 auto',
+      position: 'absolute',
+      right: '0',
+      padding: '10px',
+      width: '100%',
+      bottom: '54px',
+      backgroundColor:'#FFAAAA',
+      color:'#fff',
+      fontWeight:'bold',
+      boxShadow:'none',
+      borderRadius:0,
+      visibility:'hidden',
+      '&:hover': {
+          backgroundColor: '#fff',
+          color:'#FFAAAA',
+          boxShadow: '0 0 0 0.1rem #FFAAAA',
+        },
+      
+  },
+   
   }));
   const classes = useStyles();
   
   const addFavorite = (e) =>{
     if (e.target.style.color != 'red'){
       e.target.style.color = 'red'
+      setFavColor(true)
     } else{
       e.target.style.color = ''
+      setFavColor(false)
     }
      
   }
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-      {/* <SimpleModal /> */}
-    </div>
-  );
-  function rand() {
-    return Math.round(Math.random() * 20) - 10;
+  const handlebtnVisibility = () =>{
+      setBtnVisible(true)
   }
-  
-  function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
-  
-    return {
-      top: `${top}%`,
-      left: `${left}%`,
-      transform: `translate(-${top}%, -${left}%)`,
-    };
-  }
+  const handlebtnHide = () =>{
+    setBtnVisible(false)
+} 
+const getLookBtn = (
+  <Button variant="contained" size="medium" disableElevation 
+  className={classes.btn}  style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
+  onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
+  > Get Look</Button>
+);
   return (
     <div className={classes.root}>
         <img src= {product.image} alt="whatever" className={classes.media} 
-        onMouseLeave={e => e.target.src = product.image} onMouseEnter={e => e.target.src = img}/>
-       < Favorite className={classes.icon} onClick={addFavorite}/>
+         onMouseLeave={handlebtnHide} onMouseEnter={handlebtnVisibility}
+        />
+        {fav_color ?  < Favorite className={classes.icon} onClick={addFavorite}/> :
+         <FavoriteBorderIcon onClick={addFavorite}  className={classes.icon2}/>}
+      
+
        <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
           {product.name} 
         </Typography>
@@ -101,17 +115,8 @@ const useStyles = makeStyles((theme) => ({
 
           ${product.price} 
         </Typography> 
-        {/* <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
-        <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal> */}
+      
+      { getLookBtn}
         
     </div>
   )

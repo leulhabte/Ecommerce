@@ -40,12 +40,13 @@ const Hero = () => {
 window.addEventListener('scroll',handleScroll)
     return (
         <div className={classnames(`${classes.root}`) }  >
-            <Navbar />
+            {/* <Navbar /> */}
             <div className={classnames(`${classes.child}`,animate ? `${classes.animatedItem}` : '') } 
-             style={{filter: visible ? 'blur(18px)' : 'blur(0)'}}
+             style={{filter: visible ? (isMobile ? '' : 'blur(18px)') : 'blur(0)'}}
                  ></div>
             
-            <div className={classnames(classes.hero_title,visible ? classes.stop_transform :  '')}>
+            <div className={classnames(classes.hero_title,visible ? classes.stop_transform :  '')}
+            style={{visibility: visible ? (isMobile ? 'hidden' : 'visible') : ''}}>
             Let the beauty <br/><span>prompt out of you</span>
             </div>
             {/* <div className={classes.hero_title}>
