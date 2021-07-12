@@ -5,6 +5,8 @@ import Carousel from 'react-elastic-carousel'
 import {Typography, Button, Card, CardActions, 
     CssBaseline, Toolbar, Container,
      CardContent, CardMedia, AppBar, IconButton} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
+
 const Products = [
     {
         id: 1,
@@ -79,27 +81,35 @@ const Products = [
         description: 'Anti Blemish Cream',
     },
 ];
+const useStyles = makeStyles((theme) => ({
+    ButtonStyles: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize : '15px',
+    width: '20%',
+    display: 'flex',
+    margin: 'auto',
+    marginBottom: '10px',
+    paddingBottom: '10px',
+    textAlign: 'center',
+    // backgroundColor: '#FFAAAA',
+    backgroundColor: '#FFBCBC',
+    letterSpacing: '0.5rem',
+    '&:hover': {
+            backgroundColor: '#fff',
+            color:'#FFAAAA',
+            boxShadow: '0 0 0 0.2rem #FFAAAA',
+          },
+  }
+}));
 const SkinProducts = () => {
-    
+    const classes = useStyles();
     const breakPoints = [
         { width: 1, itemsToShow: 1, pagination: false },
         { width: 500, itemsToShow: 2, itemsToScroll: 2, pagination: false },
         { width: 850, itemsToShow: 3, itemsToScroll: 2,  pagination: false },
     ];
-    const ButtonStyles = {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize : '15px',
-        width: '20%',
-        display: 'flex',
-        justifyContent: 'center',
-        margin: 'auto',
-        marginBottom: '50px',
-        padding: '10px',
-        textAlign: 'center',
-        backgroundColor: '#FFAAAA',
-        letterSpacing: '0.5rem'
-    }
+    
 return (
         <> 
                 <Carousel breakPoints={breakPoints} styles={{marginTop: '900px'}}>
@@ -110,12 +120,10 @@ return (
                 })}        
                  </Carousel>  
           
-            <Button style={ButtonStyles}>
+            <Button variant="contained" size="large" disableElevation className={classes.ButtonStyles}>
                 View More                   
             </Button>
         </>
     )
-
 }
-
 export default SkinProducts;

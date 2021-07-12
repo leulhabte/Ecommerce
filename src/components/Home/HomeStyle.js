@@ -38,7 +38,8 @@ export default makeStyles((theme) => ({
    },
    skin:{
     backgroundColor: 'rgb(246,243, 240)',
-    margin:'100px 0'
+    margin:'100px 0',
+    paddingBottom: '10px'
    },
    face:{
     //margin:'50px auto',

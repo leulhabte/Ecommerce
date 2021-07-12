@@ -36,7 +36,7 @@ Navbar
 nav {
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 1000;
 }
 .nav-header {
   display: flex;
@@ -115,11 +115,21 @@ nav {
   overflow: hidden;
   transition: var(--transition);
 }
-.show-container {
-  height: 15rem;
+/* .links {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
 }
 
-@media (min-width: 800px) {
+.links a {
+  font-family: "Viaoda Libre", cursive;
+  margin: 0 0.5rem;
+  font-size: 20px;
+  display: inline;
+  overflow: hidden;
+} */
+
+@media (min-width: 769px) {
   .nav-container {
     display: flex;
     align-items: baseline;
@@ -176,9 +186,12 @@ nav {
   .links {
     display: flex;
     position: relative;
+    justify-content: space-around;
+  }
+  .links li {
+    margin: 10px;
   }
   .links a {
-    padding: 15px;
     font-family: "Viaoda Libre", cursive;
     margin: 0 0.5rem;
     font-size: 20px;

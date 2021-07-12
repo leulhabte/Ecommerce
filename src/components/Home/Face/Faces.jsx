@@ -13,10 +13,10 @@ const Faces = () => {
          
         },
         left:{
-          maxWidth: 400,
+         maxWidth: 400,
          boxShadow:0,
-          border:0,
-          overflowX:'auto',
+         border:0,
+         overflowX:'auto',
         //margin:'10px',
          borderRadius:0,
          backgroundImage:`url(${img})`,
@@ -24,8 +24,6 @@ const Faces = () => {
          backgroundPosition:'right',
         //backgroundColor:'#555',
          height:'500px',
-
-    
         },
         right:{
           display: 'flex',
@@ -51,7 +49,7 @@ const Faces = () => {
         {
             "id":1,
             "name" : "Nuface",
-            "des ": " Nuface mini facial toner",
+            "des": " Nuface mini facial toner",
             "rating" : 4.5 ,
             "price" : 89,
             "image":img5
@@ -61,7 +59,7 @@ const Faces = () => {
         {
             "id":2,
             "name" : "Smoothskin",
-            "des ": " Smoothskin Bare + Ultrafast IPL Hair",
+            "des": " Smoothskin Bare + Ultrafast IPL Hair",
             "rating" : 4.5 ,
             "price" : 280,
             "image":img2
@@ -71,7 +69,7 @@ const Faces = () => {
         {
             "id":3,
             "name" : "Foreo",
-            "des ": "Foreo Luna 3 Sonic Facial \
+            "des": "Foreo Luna 3 Sonic Facial \
             Cleanser and Anti Ageing Massager",
             "rating" : 4.5 ,
             "price" : 55,
@@ -95,7 +93,7 @@ const Faces = () => {
             <Grid item xs={0} md={4}>
               <div className={classes.left}>
                 
-                </div>
+              </div>
             </Grid>
             <Grid item xs={12} md={8}>
               <div className={classes.right}>

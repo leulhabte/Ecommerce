@@ -12,10 +12,19 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',  
+    fontFamily: `'Playfair Display', serif`
   },
   skinButton: {
-    border: '1px solid lightgrey',
     marginTop: '10px',
+    border: 'none',
+    backgroundColor: 'white',
+    border: '1px solid lightgrey',
+    '&:hover': {
+      border: '1px solid #FFAAAA',
+      backgroundColor: '#fff',
+      boxShadow: '0 0 0 0 #FF94CC',
+      // color: '#ffaaaa'
+    }
   
   },
   skinImages: {
@@ -31,7 +40,19 @@ export default makeStyles((theme) => ({
     position: 'absolute',
     top: '10px',
     right: '20px',
-    color: '#f59b89'
-  }
+    display: 'flex',
+    flexDirection: 'column',
+    color: 'rgb(240, 239, 234)'
+  },
+  // favoriteText: {
+  //   position: 'relative',
+  //   // display: 'none',
+  //   fontSize: '10px',
+  //   top: '-10px'
+    
+
+    
+  // }
+
 
 }));

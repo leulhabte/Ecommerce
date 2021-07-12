@@ -9,7 +9,7 @@ const Face = ({product}) => {
         root: {
          maxWidth: '350px',
          boxShadow:0,
-          border:0,
+         border:0,
          margin:'15px',
          borderRadius:0,
          //backgroundImage:`url (${product.image})`,
@@ -17,13 +17,14 @@ const Face = ({product}) => {
          backgroundPosition:'center',
          height:'400px',
          flex: '0 0 auto',
-         position:'relative'
+         position:'aboslute'
     
         },
         content:{
+            position: 'relative',
             textAlign:'center',
             textTransform:'uppercase',
-           // fontFamily:`'Roboto Slab', serif`
+          //  fontFamily:`'Roboto Slab', serif`
         },
         description:{
           textTransform:'capitalize',
@@ -31,7 +32,7 @@ const Face = ({product}) => {
         },
         media: {
           height: '250px',
-          margin:0,
+          margin: 0,
           position:'relative'
           //paddingTop: '56.25%', // 16:9
         },
@@ -68,23 +69,23 @@ const Face = ({product}) => {
         <Favorite className={classes.icon}/>
       </CardActionArea> 
       
-       <CardContent className = {classes.content}>
-        <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
-          {product.name} 
-        </Typography>
-         <Typography variant="body1" color="textSecondary" component="p" className= {classes.description}>
-          {/* {product.description} */}
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.  
-          
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {product.rating}
-        </Typography>
-        <Typography variant="body2" color="textPrimary" component="p"
-         style={{fontWeight:'bold',fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`}}>
-          ${product.price}
-        </Typography> 
-      </CardContent>  
+        <CardContent className = {classes.content}>
+            <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
+              {product.name} 
+            </Typography>
+            <Typography variant="body1" color="textSecondary" component="p" className= {classes.description}>
+              {product.des}
+              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.   */}
+              
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {product.rating}
+            </Typography>
+            <Typography variant="body2" color="textPrimary" component="p"
+            style={{fontWeight:'bold',fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`}}>
+              ${product.price}
+            </Typography> 
+        </CardContent>  
       </Card>
     )
 }
