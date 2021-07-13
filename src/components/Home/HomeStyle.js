@@ -4,7 +4,11 @@ export default makeStyles((theme) => ({
 
     liptitle: {
     color: '#CEBDB3',
-    fontFamily: 'Keania One',
+    fontFamily: ['"Playfair Display"', 'serif'].join(','),
+    display: 'flex',
+    justifyContent:'center',
+    textAlign:'center',
+    alignItems: 'center',
     fontSize: '2rem',
     },
     lipheder: {
@@ -43,7 +47,7 @@ export default makeStyles((theme) => ({
    },
    face:{
     //margin:'50px auto',
-       //padding:'5rem 0'
+       paddingBottom:'5rem',
        margin:'100px 0',
        backgroundColor: 'rgb(247,234, 232)'
    }
