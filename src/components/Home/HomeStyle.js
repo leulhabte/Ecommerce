@@ -14,9 +14,9 @@ export default makeStyles((theme) => ({
     lipheder: {
     padding: 0,
     margin: '0.5rem',
-    
+
     },
-    Title: {  
+    Title: {
         // fontFamily: ['"Playfair Display"', 'serif'].join(','),
         // display: 'flex',
         // justifyContent:'center',
@@ -42,7 +42,8 @@ export default makeStyles((theme) => ({
    },
    skin:{
     backgroundColor: 'rgb(246,243, 240)',
-    margin:'100px 0'
+    margin:'100px 0',
+    paddingBottom: '10px'
    },
    face:{
     //margin:'50px auto',
@@ -51,5 +52,3 @@ export default makeStyles((theme) => ({
        backgroundColor: 'rgb(247,234, 232)'
    }
 }));
-
-

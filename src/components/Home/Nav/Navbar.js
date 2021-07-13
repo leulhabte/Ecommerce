@@ -21,8 +21,8 @@ const Navbar = () => {
   }, [showLinks]);
 
     return (
-        <nav style={{position:'sticky'}}>
-               <div className='nav-container' >
+        <nav >
+               <div className='nav-container'>
                 <div className="nav-center">
                     <div className="nav-header">
                         <h5 className="nav-logo">DJFS</h5>
@@ -32,16 +32,18 @@ const Navbar = () => {
                     </div>
                     
                     <div className='links-container show-container' ref={linksContainerRef}>
-                        <ul className='links' ref={linksRef}>
+                       
                             {links.map((link) => {
                             const { id, url, name } = link;
                             return (
-                                <li key={id}>
-                                <a href={url}>{name}</a>
-                                </li>
+                                 <ul className='links' ref={linksRef}>
+                                    <li key={id}>
+                                    <a href={url}>{name}</a>
+                                    </li>
+                                 </ul>
                             );
                             })}
-                        </ul>
+                       
                         
                     </div>    
                 </div>

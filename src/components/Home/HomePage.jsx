@@ -71,13 +71,14 @@ const HomePage = () => {
                     <ColoredLine color="#FFAAAA" />
                         <SkinProducts />
                 </section>
-                <section className="brushes">
-                    <Typography variant="h5" align='center' className={classes.Title} gutterButtom variant={'h4'} >
+                <section className="brushes" >
+                    <Typography variant="h5" align='center' className={classes.Title} gutterButtom>
                         Brushes
                     </Typography>
                     <ColoredLine color="#FFAAAA" />
                     <Brushes />
                 </section>
+                
             </main>
             <footer>
 

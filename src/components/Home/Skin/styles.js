@@ -1,43 +1,57 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  // root: {
-  //   maxWidth: '100%',
-  //   marginLeft: '10px',
-  //   marginRight: '10px',
-  //   // position:'relative',
-
-    
-  // },
   skinProducts: {
     position: 'relative',
-  
     overflow: 'hidden',
-    marginTop: '90px'
-  },
-  cardActions: {
-    display: 'flex',
-    justifyContent: 'center',
+    marginTop: '90px',
+    maxWidth: '400px'
   },
   cardContent: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    textAlign: 'center',
-    fontFamily: ["'Benne'", 'serif'].join(','),   
+    textAlign: 'center',  
+    fontFamily: `'Playfair Display', serif`
   },
   skinButton: {
-    border: '1px solid lightgrey',
+    marginTop: '10px',
     backgroundColor: 'white',
-  },
-  skinProductsImage: {
-    
+    border: '1px solid lightgrey',
+    '&:hover': {
+      border: '1px solid #FFAAAA',
+      backgroundColor: '#fff',
+      boxShadow: '0 0 0 0 #FF94CC',
+      // color: '#ffaaaa'
+    }
+  
   },
   skinImages: {
     margin: 'auto',
     width: '100%',
     heigth: '900px', 
     objectFit: 'cover'   
-  }
+  },
+  skinProductsImage :{
+    position: 'relative',
+  },
+  Favorite: {
+    position: 'absolute',
+    top: '10px',
+    right: '20px',
+    display: 'flex',
+    flexDirection: 'column',
+    color: 'rgb(240, 239, 234)'
+  },
+  // favoriteText: {
+  //   position: 'relative',
+  //   // display: 'none',
+  //   fontSize: '10px',
+  //   top: '-10px'
+    
+
+    
+  // }
+
 
 }));

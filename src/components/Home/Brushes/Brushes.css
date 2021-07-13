@@ -1,17 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@1&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Castoro:ital@1&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap");
+.myBrush {
+  height: 100vh;
+}
 .Brushes {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+  height: 700px;
 }
 .Brush {
   background-color: #c6f850;
   border-radius: 8px;
+  display: flex;
   background-size: cover;
   background-position: center;
+  align-items: flex-start;
   position: relative;
+  height: 100%;
 }
 .brush-product-details {
   position: absolute;
@@ -34,19 +42,22 @@
   justify-content: center;
 }
 .brush-product-details button {
-  border: none;
   background-color: #eccdc7;
-  padding: 5px;
-  font-size: 18px;
   letter-spacing: 0.5rem;
-  font-family: "Castoro", serif;
+  font-family: "Playfair Display", serif;
   margin: 10px;
+  padding: 10px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 5px;
 }
 .brush-product-details button:hover {
+  border: none;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
   font-weight: bold;
+  color: #ffaaaa;
+  background-color: white;
+  box-shadow: 0 0 0 0.1rem #eccdc7;
 }
 .brush-product-details:hover {
   opacity: 1;
@@ -61,7 +72,9 @@
 .Brush-description {
   text-align: center;
   color: white;
-  font-family: "Castoro", serif;
+  /* font-family: "Castoro", serif; */
+  /* font-family: "Roboto Slab", serif; */
+  font-family: "Playfair Display", serif;
   letter-spacing: 0.2rem;
   margin-bottom: 10px;
 }
@@ -74,11 +87,9 @@
 }
 .Brushes .one {
   background-image: url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZSUyMGJydXNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-  height: 600px;
 }
 .Brushes .two {
   background-image: url("https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTNz7RER0gIL20Xe6ech4Y0IzqPxHoXWOpR5m_xrvVp7Q2quuOkp-SpeOZw1qdPLvrQGto0J6U&usqp=CAE");
-  /* background-image: url("https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQMgVI0nYuHU9BNCN8sg_dxx01j3pz4QngA03D1pcQuQbWTR3xOO2xlsMhMsN2_zw0RSzkFRz8&usqp=CAE"); */
 }
 .Brushes .three {
   background-image: url("https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRmDYVxiM6FwKYElJOt5tSj85FgAHQFbUvlOOqw7uNGJnASLD6IyXIJL1u6_fSK64i4iu27kE7S&usqp=CAE");
@@ -97,8 +108,16 @@
 }
 
 @media (max-width: 768px) {
+  .myBrush {
+    height: 170vh;
+  }
   .Brushes {
     grid-template-rows: repeat(10, 1fr);
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
+    grid-template-columns: repeat(2, 1fr);
+    height: 700px;
+  }
+  .Brush {
+    height: 400px;
   }
 }

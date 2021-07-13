@@ -21,9 +21,9 @@ const Hero = () => {
   }, [isMobile])
 
   useEffect(() => {
-     // setAnimate(true)
-  //  console.log(animate)
-    Aos.init()
+     setAnimate(true)
+   console.log(animate)
+     Aos.init()
   }, [])
 
   const  handleScroll = (e) =>{

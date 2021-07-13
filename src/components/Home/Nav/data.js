@@ -4,7 +4,7 @@ const links = [
     {
         id: 1,
         url: '#',
-        name: 'Best-sellers'
+        name: 'BestSellers'
     },
     {
         id: 2,

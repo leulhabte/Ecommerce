@@ -8,7 +8,7 @@ import { BrowserRouter as
 import LookSingle from './components/Home/Looks/LookSingle';
 const App = () => {
     return (
-        
+
       <>
       <CssBaseline/>
       <Navbar/>
@@ -26,4 +26,3 @@ const App = () => {
 }
 
 export default App;
-
