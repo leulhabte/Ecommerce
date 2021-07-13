@@ -49,8 +49,8 @@ const Brushes = () => {
                 }
                 
 
-        //     </div>
-        //  </div>
+            </div>
+        </div>
         // <ImageList sx={{ width: 500, height: 450 }}  variant="woven" cols={3} gap={8}>
         //     {BrushContent.map((Brush)=> (
         //         <ImageListItem key={Brush.img}>

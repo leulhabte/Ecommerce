@@ -2,7 +2,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab&display=swap");
 .myBrush {
-  height: 70vh;
+  height: 100vh;
 }
 .Brushes {
   display: grid;
@@ -109,7 +109,7 @@
 
 @media (max-width: 768px) {
   .myBrush {
-    height: 130vh;
+    height: 170vh;
   }
   .Brushes {
     grid-template-rows: repeat(10, 1fr);

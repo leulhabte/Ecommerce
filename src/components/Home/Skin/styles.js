@@ -16,7 +16,6 @@ export default makeStyles((theme) => ({
   },
   skinButton: {
     marginTop: '10px',
-    border: 'none',
     backgroundColor: 'white',
     border: '1px solid lightgrey',
     '&:hover': {

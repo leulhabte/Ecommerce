@@ -24,9 +24,6 @@ ul {
 a {
   text-decoration: none;
 }
-body {
-  font-family: "Viaoda Libre", cursive;
-}
 
 /*
 =============== 
@@ -36,7 +33,7 @@ Navbar
 nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
 }
 .nav-header {
   display: flex;
@@ -74,7 +71,7 @@ nav {
   transition: 0.3s;
 }
 .links a:hover {
-  background: #eccdc7;
+  background: #fde3de;
   padding-left: 1.5rem;
 }
 
@@ -82,7 +79,7 @@ nav {
   width: 20%;
   display: flex;
   justify-content: space-around;
-  color: darkgrey;
+  color: rgb(70, 66, 66);
 }
 .nav-icons ul {
   text-decoration: none;
@@ -97,17 +94,13 @@ nav {
 }
 .nav-icon:hover {
   cursor: pointer;
-  color: #eccdc7;
+  color: #fde3de;
 }
 .nav-icons li span {
   position: absolute;
   top: -10px;
   margin: 0 5px 0 3px;
-  color: #eccdc7;
-}
-
-.searchSpace {
-  display: none;
+  color: #fac9bf;
 }
 
 .links-container {
@@ -115,27 +108,22 @@ nav {
   overflow: hidden;
   transition: var(--transition);
 }
-/* .links {
-  display: flex;
-  position: relative;
-  justify-content: space-around;
+.show-container {
+  height: 15rem;
 }
 
-.links a {
-  font-family: "Viaoda Libre", cursive;
-  margin: 0 0.5rem;
-  font-size: 20px;
-  display: inline;
-  overflow: hidden;
-} */
-
-@media (min-width: 769px) {
+@media (max-width: 800px) {
+  .searchSpace {
+    display: none;
+  }
+}
+@media (min-width: 800px) {
   .nav-container {
     display: flex;
     align-items: baseline;
     overflow: hidden;
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
   }
 
   .searchSpace {
@@ -144,18 +132,23 @@ nav {
     width: 0px;
     transition: 0.4s;
     color: black;
-    padding: 5px;
     font-size: 16px;
     height: 25px;
   }
-  .search-icon {
-    width: 200px;
+  .nav-icon-search {
+    background-color: rgb(70, 66, 66);
+    height: 40px;
+  }
+  .nav-icon:hover > .searchSpace {
+    width: 130px;
     height: 20px;
-    border: none;
+    border: 1px solid #fde3de;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "vioda libre", serif;
     outline: none;
     margin: 2px;
-    padding: 8px;
-    display: flex;
+    padding: 10px;
   }
 
   .nav-center {
@@ -166,15 +159,12 @@ nav {
     padding: 1rem;
     flex: 2;
   }
-  .nav-header {
-    /* width: 15%; */
-  }
+
   .nav-toggle {
     display: none;
   }
   .nav-logo {
     height: 40px;
-    font-family: "Orbitron", sans-serif;
     border-radius: 5px;
   }
   .links-container {
@@ -186,13 +176,10 @@ nav {
   .links {
     display: flex;
     position: relative;
-    justify-content: space-around;
-  }
-  .links li {
     margin: 10px;
   }
   .links a {
-    font-family: "Viaoda Libre", cursive;
+    padding: 0;
     margin: 0 0.5rem;
     font-size: 20px;
     display: inline;
