@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer'
 import Navbar from './components/Home/Nav/Navbar';
 import { BrowserRouter as
    Router , Route , Switch } from 'react-router-dom';
-import BestSellerSingle from './components/Home/BestSellers/BestSellerSingle';
+import LookSingle from './components/Home/Looks/LookSingle';
 const App = () => {
     return (
         
@@ -16,7 +16,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path = '/' component ={Home}  exact/>
-          <Route path ='/bestsellers' component = {BestSellerSingle} />
+          <Route path ='/bestsellers' component = {LookSingle} />
         </Switch>     
         
       </Router>

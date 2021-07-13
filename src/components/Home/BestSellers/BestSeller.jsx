@@ -1,125 +1,92 @@
-import React,{useState} from 'react'
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import {Typography,Modal,Button} from '@material-ui/core'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import img from './cleanser.jpg'
+import {Card,CardActions,CardContent,CardHeader,CardMedia,
+  Typography,CardActionArea} from '@material-ui/core'
 import { Favorite } from '@material-ui/icons';
+import img from './face8.jpg'
 const BestSeller = ({product}) => {
-      
-  const [fav_color,setFavColor] = useState(false)
-  const [btnVisible,setBtnVisible] = useState(false)
-const useStyles = makeStyles((theme) => ({
-    root: {
-     maxWidth: 350,
-     boxShadow:0,
-      border:0,
-     margin:'10px',
-     borderRadius:0,
-     position:'relative',
-     height:'70%',
-     cursor:'pointer'
-
-    },
-    content:{
-        textAlign:'center',
-        textTransform:'uppercase',
-       // fontFamily:`'Roboto Slab', serif`
-    },
-    description:{
-      textTransform:'capitalize',
-     // fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`
-    },
-    media: {
-      height: '350px',
-      margin:0,
-      width:'100%',
-      position:'relative'
-      //paddingTop: '56.25%', // 16:9
-    },
-    cardAction:{
-      padding:0
-    },
-    icon:{
-      position:'absolute',
-      bottom:'2px',
-      right:'5px',
-      color:'red'
-    },
-    icon2:{
-      position:'absolute',
-      bottom:'2px',
-      right:'5px',
-      color:'#666'
-    },
-    btn:{
-     margin:'0 auto',
-      position: 'absolute',
-      right: '0',
-      padding: '10px',
-      width: '100%',
-      bottom: '54px',
-      backgroundColor:'#FFAAAA',
-      color:'#fff',
-      fontWeight:'bold',
-      boxShadow:'none',
-      borderRadius:0,
-      visibility:'hidden',
-      '&:hover': {
-          backgroundColor: '#fff',
-          color:'#FFAAAA',
-          boxShadow: '0 0 0 0.1rem #FFAAAA',
+    const useStyles = makeStyles((theme) => ({
+        root: {
+         maxWidth: '350px',
+         boxShadow:0,
+          border:0,
+         margin:'15px',
+         borderRadius:0,
+         //backgroundImage:`url (${product.image})`,
+         backgroundSize:'cover',
+         backgroundPosition:'center',
+         height:'400px',
+         flex: '0 0 auto',
+         position:'relative'
+    
         },
-      
-  },
-   
-  }));
-  const classes = useStyles();
-  
-  const addFavorite = (e) =>{
-    if (e.target.style.color != 'red'){
-      e.target.style.color = 'red'
-      setFavColor(true)
-    } else{
-      e.target.style.color = ''
-      setFavColor(false)
-    }
-     
-  }
-
-  const handlebtnVisibility = () =>{
-      setBtnVisible(true)
-  }
-  const handlebtnHide = () =>{
-    setBtnVisible(false)
-} 
-const getLookBtn = (
-  <Button variant="contained" size="medium" disableElevation 
-  className={classes.btn}  style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
-  onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
-  > Get Look</Button>
-);
-  return (
-    <div className={classes.root}>
-        <img src= {product.image} alt="whatever" className={classes.media} 
-         onMouseLeave={handlebtnHide} onMouseEnter={handlebtnVisibility}
+        content:{
+            textAlign:'center',
+            textTransform:'uppercase',
+           // fontFamily:`'Roboto Slab', serif`
+        },
+        description:{
+          textTransform:'capitalize',
+         // fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`
+        },
+        media: {
+          height: '250px',
+          margin:0,
+          position:'relative'
+          //paddingTop: '56.25%', // 16:9
+        },
+        cardAction:{
+          padding:0
+        },
+        icon:{
+          position:'absolute',
+          top:'2px',
+          right:'2px'
+        }
+      }));
+      const classes = useStyles();
+    return (
+      <Card className={classes.root}>
+      {/* <CardHeader
+       
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        
+      /> */}
+      <CardActionArea className={classes.cardAction}>
+        <CardMedia
+            className= {classes.media}
+            component='img'
+            image = {product.image}
+            title="Paella dish"
+            onMouseEnter={e => e.target.image = product.image}
+            onMouseLeave={e => e.target.image = img}
         />
-        {fav_color ?  < Favorite className={classes.icon} onClick={addFavorite}/> :
-         <FavoriteBorderIcon onClick={addFavorite}  className={classes.icon2}/>}
+        <Favorite className={classes.icon}/>
+      </CardActionArea> 
       
-
-       <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
+       <CardContent className = {classes.content}>
+        <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
           {product.name} 
+        </Typography>
+         <Typography variant="body1" color="textSecondary" component="p" className= {classes.description}>
+          {/* {product.description} */}
+           Lorem ipsum dolor sit amet consectetur adipisicing elit.  
+          
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {product.rating}
         </Typography>
         <Typography variant="body2" color="textPrimary" component="p"
          style={{fontWeight:'bold',fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`}}>
-
-          ${product.price} 
+          ${product.price}
         </Typography> 
-      
-      { getLookBtn}
-        
-    </div>
-  )
+      </CardContent>  
+      </Card>
+    )
 }
-  
+
 export default BestSeller

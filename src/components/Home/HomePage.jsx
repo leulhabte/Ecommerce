@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import useStyles from './HomeStyle'
 import Lips from './Lip/Lips';
 import Hero from './Hero/Hero';
-import  BestSellers from './BestSellers/BestSellers'
+import  Looks from './Looks/Looks'
 import {Typography} from '@material-ui/core';
 import Lip from './Lip/Lip';
 import Eyes from './Eyes/Eyes'
 import Navbar from './Nav/Navbar'
 import Brushes from './Brushes/Brushes'
 import SkinProducts from './Skin/skinProducts'
-import Faces from './Face/Faces'
+import BestSellers from './BestSellers/BestSellers'
 
 const HomePage = () => {
 
@@ -40,13 +40,13 @@ const HomePage = () => {
                 <section className="bestseller">
                 <Typography className={classes.bestSell_title} align='center'  variant={'h4'}>Looks</Typography>
                 <ColoredLine color="#FFAAAA" />
-                            <BestSellers/>
+                            <Looks/>
                             
                 </section>
                 <section className={classes.face}>
                 <Typography className={classes.bestSell_title} align='center' gutterBottom  variant={'h4'}> Best Sellers</Typography>
                 <ColoredLine color="#FFAAAA" />
-                <Faces/>
+                <BestSellers/>
                 </section>
                 <section className="lips">
              <div>
