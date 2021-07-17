@@ -4,7 +4,7 @@ function NavLogo() {
    const useStyles = makeStyles((theme) => ({
         navLogo: {
             height: '40px',
-            color: '#eccdc7',
+            color: '#d9a3a3',
             fontFamily: '"Orbitron", sans-serif',
             borderRadius: '5px',
             fontSize:'40px'

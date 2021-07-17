@@ -18,8 +18,11 @@ export default makeStyles((theme) => ({
     marginTop: '10px',
     backgroundColor: 'white',
     border: '1px solid lightgrey',
+    textTransform:'uppercase',
+    fontWeight:'bold',
+    color:'#FFAAAA',
     '&:hover': {
-      border: '1px solid #FFAAAA',
+      border: '2px solid #FFAAAA',
       backgroundColor: '#fff',
       boxShadow: '0 0 0 0 #FF94CC',
       // color: '#ffaaaa'

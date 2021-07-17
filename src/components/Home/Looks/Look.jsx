@@ -1,28 +1,42 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import {Typography,Modal,Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import img from './cleanser.jpg'
 import { Favorite } from '@material-ui/icons';
+import classnames from 'classnames'
+
 const Look = ({product}) => {
       
+  //states
   const [fav_color,setFavColor] = useState(false)
   const [btnVisible,setBtnVisible] = useState(false)
-const useStyles = makeStyles((theme) => ({
-    root: {
-     maxWidth: 350,
-     boxShadow:0,
-      border:0,
-     margin:'10px',
-     borderRadius:0,
-     position:'relative',
-     height:'70%',
-     cursor:'pointer'
+  const [isMobile,setIsMobile] = useState(false)     
 
+  useEffect(() => {   
+    window.addEventListener("resize", () => {
+        const ismobile = window.innerWidth < 960;
+        if (ismobile !== isMobile) setIsMobile(ismobile);
+    }, false);
+  }, [isMobile])
+
+//style
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      maxWidth:'33.333333%',
+      boxShadow:0,
+      border:0,
+      margin:'0 25px',
+      borderRadius:0,
+      position:'relative',
+      // height:'70%',
+      cursor:'pointer',
+      display:'inline'
+      
     },
     content:{
-        textAlign:'center',
-        textTransform:'uppercase',
+      textAlign:'center',
+      textTransform:'uppercase',
        // fontFamily:`'Roboto Slab', serif`
     },
     description:{
@@ -30,11 +44,10 @@ const useStyles = makeStyles((theme) => ({
      // fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`
     },
     media: {
-      height: '350px',
+      height: '400px',
       margin:0,
-      width:'100%',
+      width:'400px',
       position:'relative'
-      //paddingTop: '56.25%', // 16:9
     },
     cardAction:{
       padding:0
@@ -75,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   const classes = useStyles();
   
+  //event handlers
   const addFavorite = (e) =>{
     if (e.target.style.color != 'red'){
       e.target.style.color = 'red'
@@ -98,19 +112,20 @@ const getLookBtn = (
   onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
   > Get Look</Button>
 );
+
   return (
-    <div className={classes.root}>
+    <div className={
+      classnames(  classes.root)}>
         <img src= {product.image} alt="whatever" className={classes.media} 
          onMouseLeave={handlebtnHide} onMouseEnter={handlebtnVisibility}
         />
         {fav_color ?  < Favorite className={classes.icon} onClick={addFavorite}/> :
          <FavoriteBorderIcon onClick={addFavorite}  className={classes.icon2}/>}
-      
-
-       <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold'}}>
+       <Typography variant="subtitle1" color="textSecondary"  style={{fontWeight:'bold',
+       fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`}}>
           {product.name} 
         </Typography>
-        <Typography variant="body2" color="textPrimary" component="p"
+        <Typography variant="body2" color="textPrimary" 
          style={{fontWeight:'bold',fontSize: `calc(14px + 2 * ((100vw - 320px) / 670))`}}>
 
           ${product.price} 

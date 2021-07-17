@@ -1,40 +1,36 @@
 import React,{useState,useEffect} from 'react'
 import { Grid,Button, Typography  } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import Face from './BestSeller'
-import img from './face8.jpg'
-import img2 from './cleanser.jpg'
-import img3 from './toner.jpg'
-import img4 from './lipstick1.jpg'
-import img5 from './mascara.jpg'
+import BestSeller from './BestSeller'
+
 const BestSellers = () => {
-  const [fav_color,setFavColor] = useState(false)
+  
+  //states
   const [btnVisible,setBtnVisible] = useState(false)
   const [isMobile,setIsMobile] = useState(false)
-  useEffect(() => {
-   
+
+  useEffect(() => {   
     window.addEventListener("resize", () => {
         const ismobile = window.innerWidth < 960;
         if (ismobile !== isMobile) setIsMobile(ismobile);
     }, false);
   }, [isMobile])
+
+  //styles
     const useStyles = makeStyles((theme) => ({
         root: {
-         position:'relative'
+         position:'relative',
+         marginTop:'15px'
         },
         left:{
           maxWidth: 400,
-         boxShadow:0,
+          boxShadow:0,
           border:0,
           overflowX:'auto',
-        //margin:'10px',
-         borderRadius:0,
-        //  backgroundImage:`url(${img})`,
-        //  backgroundSize:'cover',
-        //  backgroundPosition:'right',
-        backgroundColor:'#555',
-         height:'500px',    
-         position:'relative'
+          borderRadius:0,
+          backgroundColor:'#555',
+          height:'500px',    
+          position:'relative'
         },
         bestSell_desc:{
             color:'#FFAAAA',
@@ -84,14 +80,11 @@ const BestSellers = () => {
               
           },
           btn1:{
-            //margin:'45px auto',
             position: 'absolute',
             left: '50%',
             textTransform:'uppercase',
-            //bottom:'0px',
             padding: '15px',
             width: '250px',
-           // top:'50%',
             visibility:'hidden',
             backgroundColor:'#FFAAAA',
             color:'#fff',
@@ -106,36 +99,38 @@ const BestSellers = () => {
         }
       }));
     const classes = useStyles();
+
     const data = [
         {
             "id":1,
             "name" : "Nuface",
-            "des ": " Nuface mini facial toner",
+            "description": " Nuface mini mascara",
             "rating" : 4.5 ,
             "price" : 89,
-            "image":img5
+            "image":'https://source.unsplash.com/fiMx7fLi5F8',
+            'color':'#555'
             
 
         },
         {
             "id":2,
             "name" : "Smoothskin",
-            "des ": " Smoothskin Bare + Ultrafast IPL Hair",
+            "description": " Smoothskin Bare + Ultrafast IPL Hair",
             "rating" : 4.5 ,
             "price" : 280,
-            "image":img2
-            
-
+            "image":'https://source.unsplash.com/7TlWZkpxCb0',
+            'color':'rgb(191,111,129)'
+            //#bf6f81
         },
         {
             "id":3,
             "name" : "Foreo",
-            "des ": "Foreo Luna 3 Sonic Facial \
+            "description": "Foreo Luna 3 Sonic Facial \
             Cleanser and Anti Ageing Massager",
             "rating" : 4.5 ,
             "price" : 55,
-            "image":img3
-            
+            "image":'https://source.unsplash.com/0z4h9qneDMA',
+            'color':'#cdcdcd'
 
         },
         {
@@ -144,25 +139,30 @@ const BestSellers = () => {
             "description ": " Superhero matt lipstick",
             "rating" : 4.5 ,
             "price" : 150,
-            "image":img4
+            "image":'https://source.unsplash.com/8rl3jRgQIag',
+            'color':'#e3ac64'
 
         }
     ]
     
+    //event handlers
   const handlebtnVisibility = () =>{
     isMobile ?  setBtnVisible(true) : setBtnVisible(false)
   }
+
   const handlebtnHide = () =>{
     setBtnVisible(false)
   } 
-    const getLookBtn = (
+
+  const getLookBtn = (
       <Button variant="contained" size="medium" disableElevation 
        className={classes.btn} 
         // style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
       onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
       > Buy Now</Button>
     );
-    const viewMoreBtn = (
+
+  const viewMoreBtn = (
       <Button variant="contained" size="Large" disableElevation 
         className={classes.btn1} 
          style ={{visibility : isMobile ? 'visible' : 'hidden'}}
@@ -182,19 +182,11 @@ const BestSellers = () => {
             </Grid>
             <Grid item xs={12} md={8}>
               <div className={classes.right}>
-                {/* <Grid container justifyContent="space-around" 
-                        alignItems="center" spacing={4} style={{flexGrow:1}}
-                > */}
                     {
                         data.length>0 ? data.map(product => (
-                            
-                                // <Grid Item key={product.id} xs ={12} sm={6} md ={4} lg={3} direction="row">
-                                    <Face product = {product}/>
-                                // </Grid>
-                        
+                                    <BestSeller product = {product}/>
                         )) : <h1>no data</h1>
                     }
-                {/* </Grid> */}
                 </div>
             </Grid>
             

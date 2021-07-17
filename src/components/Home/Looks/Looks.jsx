@@ -1,30 +1,54 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import {Grid,Button} from '@material-ui/core'
-import BestSeller from  './Look'
+import Look from  './Look'
 import { makeStyles } from '@material-ui/core/styles';
-import img from './face8.jpg'
-import img2 from './face3.jpg'
-import img3 from './face10.jpg'
-import img4 from './img4.jpg'
-const Looks = (theme) => {
+
+import classnames from 'classnames'
+
+const Looks = () => {
+
+  const [isMobile,setIsMobile] = useState(false)     
+  useEffect(() => {   
+    window.addEventListener("resize", () => {
+        const ismobile = window.innerWidth < 960;
+        if (ismobile !== isMobile) setIsMobile(ismobile);
+    }, false);
+  }, [isMobile])
+ 
+
     const useStyles = makeStyles((theme) => ({
         container: {
-         // padding:'50px',
-          //backgroundColor:theme.palette.background.paper,
-          //padding:theme.spacing(10,0,9)
-        //   paddingTop:'50px'
         padding:'5rem',
+        paddingRight:'2rem',
         paddingTop:'2%',
-        marginLeft:'25px'
-
-    
+        marginLeft:'80px',
+        width: '97%',
+        flexWrap: 'wrap',
+        display:'flex',
+        flexDirection:'row',
+        overflowX:'auto',
+        
+        '&::-webkit-scrollbar ': {
+            width: '0.1em',
+            height:'0.5em',
+          },
+          
+         ' &::-webkit-scrollbar-track': {
+            //boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)'
+          },
+          
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: 'darkgray',
+            //outline: '1px solid slategrey'
+          }
         },
         btn:{
             margin:'45px auto',
             position: 'absolute',
             left: '40%',
             padding: '15px',
-            width: '350px',
+            width: '400px',
+            fontSize:'1.2rem',
             backgroundColor:'#FFAAAA',
             color:'#fff',
             fontWeight:'bold',
@@ -35,7 +59,8 @@ const Looks = (theme) => {
                 boxShadow: '0 0 0 0.2rem #FFAAAA',
               },
             
-        }
+        },
+        
     }))
 
     const data = [
@@ -45,9 +70,7 @@ const Looks = (theme) => {
             "des ": " Nuface mini facial toner",
             "rating" : 4.5 ,
             "price" : 89,
-            "image":img
-            
-
+            "image":'https://source.unsplash.com/bqe0J0b26RQ',  
         },
         {
             "id":2,
@@ -55,9 +78,7 @@ const Looks = (theme) => {
             "des ": " Smoothskin Bare + Ultrafast IPL Hair",
             "rating" : 4.5 ,
             "price" : 280,
-            "image":img2
-            
-
+            "image":'https://source.unsplash.com/0XfjLwiI1sk',         
         },
         {
             "id":3,
@@ -66,9 +87,7 @@ const Looks = (theme) => {
             Cleanser and Anti Ageing Massager",
             "rating" : 4.5 ,
             "price" : 55,
-            "image":img3
-            
-
+            "image":'https://source.unsplash.com/MYeFPr_Xtmc',
         },
         // {
         //     "id":4,
@@ -81,38 +100,22 @@ const Looks = (theme) => {
         // }
     ]
     const classes = useStyles()
-    // const handleBtnColorChange = (e) =>{
-    //     e.target.backgroundColor = '#fff'
-    //     e.target.color="#FFAAAA"
-    // }
-    // const handleBtnColorRev= (e) =>{
-    //     e.target.backgroundColor = '##FFAAAA'
-    //     e.target.color="#fff"
-    // }
     return (
-        // <Container maxWidth="lg" className={classes.container}>
-             <div className ={classes.container}>
-                 <Grid container justifyContent="space-around" 
-                    alignItems="center" spacing={4} style={{flexGrow:1}}
-            >
-                {
-                    data.length>0 ? data.map(product => (
-                        
-                            <Grid Item key={product.id} xs ={12} sm={6} md ={4} lg={4} direction="row">
-                                <BestSeller product = {product}/>
-                            </Grid>
-                    
-                    )) : <h1>no data</h1>
-                }
-            </Grid>
+        <div>
+              <div className ={classnames(classes.container)}>
+                <div style={{display:'inline-flex'}}>
+                    {
+                        data.length>0 ? data.map(product => (
+                                    <Look product = {product}/>                     
+                        )) : <h1>no data</h1>
+                    }
+                    </div>              
+            </div>
             <Button variant="contained" size="large" disableElevation 
-            className={classes.btn} 
-            > Get Inspired</Button>
-             </div>
-
-             
-        // </Container>
-       
+                className={classes.btn} 
+                > Get Inspired</Button>
+        </div>
+          
     )
 }
 

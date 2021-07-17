@@ -3,12 +3,11 @@ import { makeStyles} from '@material-ui/core/styles'
 import {Grid} from '@material-ui/core'
 import { Hero, SinglePage } from '../../Imports' 
 
-function LookSingle() {
+const BestSellersAll =() =>{
 
-   // VWGPhJyzMQ4
-    const img2 = 'https://source.unsplash.com/AuCrXk0pLWo'
+    const img2 = 'https://source.unsplash.com/VJ4pn_PSBLo'
     const img = 'https://source.unsplash.com/random'
-    const Title = "Looks"
+    const Title = "Best-Sellers"
 
     //style
     const useStyles = makeStyles((theme) => ({
@@ -26,8 +25,8 @@ function LookSingle() {
             "description": " Nuface mini facial toner",
             "rating" : 4.5 ,
             "price" : 89,
-            "image":'https://source.unsplash.com/3xTP_gWUlrg',
-            "image2":'https://source.unsplash.com/FoeIOgztCXo',
+            "image":'https://source.unsplash.com/l3fh8RDxCvA',
+            "image2":'https://source.unsplash.com/7P44epMyAX4',
             'color':'#555'
             
 
@@ -38,8 +37,8 @@ function LookSingle() {
             "description": " Smoothskin Bare + Ultrafast IPL Hair",
             "rating" : 4.5 ,
             "price" : 280,
-            "image":'https://source.unsplash.com/bqe0J0b26RQ',
-            "image2":'https://source.unsplash.com/HCsZqthDIyw',
+            "image":'https://source.unsplash.com/E1rH__X9SA0',
+            "image2":'https://source.unsplash.com/qD7ou7oGGIE',
             'color':'rgb(191,111,129)'
             //#bf6f81
         },
@@ -50,8 +49,8 @@ function LookSingle() {
             Cleanser and Anti Ageing Massager",
             "rating" : 4.5 ,
             "price" : 55,
-            "image":'https://source.unsplash.com/bOKXxn9qlsk',
-            "image2":'https://source.unsplash.com/ceWgSMd8rvQ',
+            "image":'https://source.unsplash.com/7TlWZkpxCb0',
+            "image2":'https://source.unsplash.com/iKoH1gNON70',
             'color':'#cdcdcd'
 
         },
@@ -61,8 +60,8 @@ function LookSingle() {
             "description": " Superhero matt lipstick",
             "rating" : 4.5 ,
             "price" : 150,
-            "image":'https://source.unsplash.com/VWGPhJyzMQ4',
-            "image2":'https://source.unsplash.com/vyhYvCiL3QQ',
+            "image":'https://source.unsplash.com/1A5hSvPZjMc',
+            "image2":'https://source.unsplash.com/e5a8TlCzV10',
             'color':'#e3ac64'
 
         },
@@ -72,7 +71,7 @@ function LookSingle() {
             "description": " Nuface mini facial toner",
             "rating" : 4.5 ,
             "price" : 89,
-            "image":'https://source.unsplash.com/vTL_qy03D1I',
+            "image":'https://source.unsplash.com/0z4h9qneDMA',
             "image2":'https://source.unsplash.com/B22hPKWDW3k',
             'color':'#555'
             
@@ -84,7 +83,7 @@ function LookSingle() {
             "description": " Smoothskin Bare + Ultrafast IPL Hair",
             "rating" : 4.5 ,
             "price" : 280,
-            "image":'https://source.unsplash.com/0XfjLwiI1sk',
+            "image":'https://source.unsplash.com/fiMx7fLi5F8',
             "image2":'https://source.unsplash.com/Wude2F3CMss',
             'color':'rgb(191,111,129)'
             //#bf6f81
@@ -96,7 +95,7 @@ function LookSingle() {
             Cleanser and Anti Ageing Massager",
             "rating" : 4.5 ,
             "price" : 55,
-            "image":'https://source.unsplash.com/MYeFPr_Xtmc',
+            "image":'https://source.unsplash.com/YMeu0da-A9M',
             "image2":'https://source.unsplash.com/dNmmjX2Owxk',
             'color':'#cdcdcd'
 
@@ -135,4 +134,4 @@ function LookSingle() {
     )
 }
 
-export default LookSingle
+export default BestSellersAll

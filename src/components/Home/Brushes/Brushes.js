@@ -36,7 +36,8 @@ const Brushes = () => {
                                         
                                     </div>
                                     <div className="Brush-icons">
-                                        <button>Add to Bag</button>
+                                        {/* <button>Add to Bag</button> */}
+                                        <Button size='medium' outlined>Add to cart</Button>
                                         <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />
                                        
                                     </div>

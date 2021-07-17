@@ -42,13 +42,21 @@ export default makeStyles((theme) => ({
    },
    skin:{
     backgroundColor: 'rgb(246,243, 240)',
-    margin:'100px 0',
-    paddingBottom: '10px'
+    //margin:'100px 0',
+    paddingBottom: '25px',
+    paddingTop:'45px'
    },
    face:{
     //margin:'50px auto',
        paddingBottom:'5rem',
-       margin:'100px 0',
-       backgroundColor: 'rgb(247,234, 232)'
+       marginTop:'170px ',
+       backgroundColor: 'rgb(247,234, 232)',
+       paddingTop: '45px'
+   },
+   brushes:{
+    paddingTop: '45px'
+   },
+   lips:{
+       paddingTop:'45px'
    }
 }));
