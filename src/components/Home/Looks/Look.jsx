@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import {Typography,Modal,Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import img from './cleanser.jpg'
 import { Favorite } from '@material-ui/icons';
 import classnames from 'classnames'
 
