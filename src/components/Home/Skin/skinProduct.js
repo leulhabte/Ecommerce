@@ -8,6 +8,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
+import StarRatings from 'react-star-ratings';
 
 const theme = createMuiTheme({
     typograph: { 
@@ -23,15 +24,7 @@ const theme = createMuiTheme({
 });
 const Skinproduct = ({ product }) => {
     const classes = useStyles();
-    function setNewImage(e) {
-        e.currentTarget.src = product.image2;
-    }
-    function setOldImage(e) {
-      e.currentTarget.src = product.image;
-    }
-    const style = {
-        // fontFamily: ['"Roboto Slab"', 'serif'].join(','),
-    }
+
     const AddtoFavorite = (e)=> {
         if(e.target.style.color != 'red'){
             e.target.style.color = 'red'
@@ -40,37 +33,62 @@ const Skinproduct = ({ product }) => {
             e.target.style.color = ''
         }
     }
+    var width = 300;
+    var difference = 2;
+    var intervalId = 0;
+
+    const changeImage = (e) => {
+       e.currentTarget.src = product.image2;
+       intervalId = setInterval(zoomIn(e), 20); 
+    }
+    const zoomIn = (e) => {
+        if(width < 320) {
+            width = width + difference;
+            
+        }
+        else {
+            clearInterval(intervalId);
+        }
+    }
     return (
         
         <div className={classes.skinProducts}> 
            
            <div className={classes.skinProductsImage} style={{width: '300px', heigth: '350px', margin: 'auto'}}>
-                        <img src={product.image} style={{width: '100%',height: "320px"}} onMouseOver={e => (e.currentTarget.src = product.image2)} onMouseOut={e => (e.currentTarget.src = product.image)} objectFit = 'cover' alt="This is product" />   
-                        <div className={classes.Favorite}>
-                               {/* <span className={classes.favoriteText}>Add to favourite</span> */}
+                        
+                        <img src={product.image} style={{width: '300px',height: "320px"}} onMouseOver={changeImage} onMouseOut={e => (e.currentTarget.src = product.image)} objectFit = 'cover' alt="This is product" />  
+                       
+                        {/* <div className={classes.Favorite}>
+                              
                              <Favorite onClick={AddtoFavorite} />
-                        </div>           
+                        </div> */}
+                        <IconButton className={classes.Favorite}>
+                            <Favorite />
+                        </IconButton>           
             </div>
              <ThemeProvider theme={theme}>     
                <CardContent className={classes.cardContent}>
                     <div>
-                        <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold', textTransform:'uppercase'}}>
+                        <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold', textTransform:'uppercase', margin : '10px 0 10px 0'}}>
                              {product.name} 
                         </Typography>
-                        <Typography variant="body1" gutterBottom style={{fontWeight:'bold'}}>
+                        <Typography variant="body1" color="textSecondary" style={{marginBottom: '10px'}}>
+                             {product.description}
+                        </Typography>
+                        <StarRatings
+                            rating={5}
+                            starRatedColor="gray"
+                            numberOfStars={5}
+                            name='rating'
+                            starDimension="15px"
+                            starSpacing="2px"
+                        />
+                        <span> ({product.noofReviews})</span>
+                        <Typography variant="body1" gutterBottom style={{fontWeight:'bold', margin : '10px 0 10px 0'}}>
                             {product.price}
                         </Typography>
-                        <Typography color="textSecondary">
-                            <StarIcon />
-                            <StarIcon/>
-                            <StarIcon/>
-                            <StarBorderIcon/>
-                            <StarBorderIcon/>
-                        </Typography>
                     </div>
-                    <Typography variant="body1" color="textSecondary" >
-                        {product.description}
-                    </Typography>
+                    
                
                     <Button  variant="contained" size="small" disableElevation className={classes.skinButton}>
                             <span style={{marginLeft: '5px', marginRight: '10px', padding: '5px'}}>Add to Cart</span> 

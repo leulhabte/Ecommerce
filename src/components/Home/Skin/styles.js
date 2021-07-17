@@ -16,11 +16,13 @@ export default makeStyles((theme) => ({
   },
   skinButton: {
     marginTop: '10px',
+    color: '#FF94CC',
     backgroundColor: 'white',
-    border: '1px solid lightgrey',
+    border: '1px solid #FF94CC',
     '&:hover': {
-      border: '1px solid #FFAAAA',
-      backgroundColor: '#fff',
+      
+      color: '#FFF',
+      backgroundColor: '#FF94CC',
       boxShadow: '0 0 0 0 #FF94CC',
       // color: '#ffaaaa'
     }

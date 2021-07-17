@@ -32,19 +32,15 @@ const Brushes = () => {
                                 <div className='brush-product-details'>
                                     <div className='Brush-description'>
                                         <h4>{Brush.Title}</h4>
-                                        <span>$ {Brush.price}</span> 
-                                        
+                                        <span>$ {Brush.price}</span>    
                                     </div>
                                     <div className="Brush-icons">
-                                        <button>Add to Bag</button>
-                                        <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />
-                                       
+                                        <Button variant="p" size="small" style={{textTransform: "capitalize"}} disableElevation >Add to Cart</Button>
+                                        <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />                                
                                     </div>
-                                    
                                 </div>
                             </div>
                         )
-                        
                     })
                 }
                 

@@ -39,7 +39,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  /* padding: 15px; */
 }
 .nav-toggle {
   font-size: 1.5rem;
@@ -176,11 +176,11 @@ nav {
   .links {
     display: flex;
     position: relative;
-    margin: 10px;
   }
   .links a {
+    margin: 25px;
     padding: 0;
-    margin: 0 0.5rem;
+    /* margin: 0 0.5rem; */
     font-size: 20px;
     display: inline;
     overflow: hidden;

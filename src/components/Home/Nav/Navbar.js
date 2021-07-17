@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars, FaUser, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import links  from './data';
+import { Link, BrowserRouter as Router } from 'react-router-dom'
 import './Navbar.css';
 const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -21,8 +22,8 @@ const Navbar = () => {
   }, [showLinks]);
 
     return (
-        <nav >
-               <div className='nav-container'>
+        <nav style={{position:'sticky'}}>
+               <div className='nav-container' >
                 <div className="nav-center">
                     <div className="nav-header">
                         <h5 className="nav-logo">DJFS</h5>
@@ -32,19 +33,28 @@ const Navbar = () => {
                     </div>
                     
                     <div className='links-container show-container' ref={linksContainerRef}>
-                       
-                            {links.map((link) => {
-                            const { id, url, name } = link;
-                            return (
-                                 <ul className='links' ref={linksRef}>
-                                    <li key={id}>
-                                    <a href={url}>{name}</a>
+                        <Router>
+                            <ul className='links' ref={linksRef}>
+                                
+                                <li>
+                                    <Link to='/'>BestSellers</ Link>
+                                    <Link to='/'>Looks</ Link>
+                                    <Link to='/'>Lips</ Link>
+                                    <Link to='/'>Eyes</ Link>
+                                    <Link to='/skinsproductpage'>Skin</ Link>
+                                    <Link to='/'>Brushes</ Link>
+                                </li>
+                                {/* {links.map((link) => {
+                                const { id, url, name } = link;
+                                return (
+                                    
+                                    <li>
+                                    
                                     </li>
-                                 </ul>
-                            );
-                            })}
-                       
-                        
+                                );
+                                })} */}
+                            </ul>
+                        </Router>
                     </div>    
                 </div>
                 

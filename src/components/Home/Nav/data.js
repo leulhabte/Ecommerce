@@ -28,7 +28,7 @@ const links = [
     },
     {
         id: 6,
-        url: '#',
+        url: 'brush',
         name: 'Brushes'
     },
     

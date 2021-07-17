@@ -1,14 +1,3 @@
-import React from 'react'
-import { Grid } from '@material-ui/core'
-import Skinproduct from './skinProduct'
-import Carousel from 'react-elastic-carousel'
-import {Typography, Button, Card, CardActions, 
-    CssBaseline, Toolbar, Container,
-     CardContent, CardMedia, AppBar, IconButton} from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
-import Hero from '../Hero/Hero';
-import { BrowserRouter as
-   Router , Route , Switch, Link } from 'react-router-dom';
 const Products = [
     {
         id: 1,
@@ -17,6 +6,7 @@ const Products = [
         name: 'RoseKin',
         price: '$ 50',
         description: 'Hydrating, soothing, softens skin',
+        noofReviews: 3020 
     },
     {
         id: 2,
@@ -25,6 +15,7 @@ const Products = [
         name: 'Z skin',
         price: '$ 39',
         description: 'Blurs lines, visibly shrinks pores',
+        noofReviews: 1032 
     },
     {
         id: 3,
@@ -33,6 +24,7 @@ const Products = [
         name: "It's a skin",
         price: '$ 80',
         description: 'Hydrating, improves radiance, clarifying',
+        noofReviews: 4231 
     },
     {
         id: 4,
@@ -41,6 +33,7 @@ const Products = [
         name: 'Storbe cream',
         price: '$ 50',
         description: 'Liquid highlighter, softest glowing finish',
+        noofReviews: 3500 
     },
     {
         id: 5,
@@ -49,6 +42,7 @@ const Products = [
         name: 'Probiotic Skin Refiner',
         price: '$ 40',
         description: 'Exel Sun screen SFP 60',
+        noofReviews: 7600
     },
     {
         id: 6,
@@ -57,6 +51,7 @@ const Products = [
         name: 'SkinCeuticals',
         price: '$ 129',
         description: 'Dry skin CTN Bundle',
+        noofReviews: 300 
     },
     {
         id: 7,
@@ -65,6 +60,7 @@ const Products = [
         name: '33BB body lotion',
         price: '$ 99',
         description: 'Anti Aging Serum, All Skin Type, 30ml',
+        noofReviews: 2500 
     },
     {
         id: 8,
@@ -73,6 +69,7 @@ const Products = [
         name: 'Purifying cleanser',
         price: '$ 69',
         description: 'Pore minimising Daily Wash',
+        noofReviews: 1000
     },
     {
         id: 9,
@@ -81,52 +78,8 @@ const Products = [
         name: 'Ophrys',
         price: '$ 119',
         description: 'Anti Blemish Cream',
+        noofReviews: 4000 
     },
 ];
-const useStyles = makeStyles((theme) => ({
-    ButtonStyles: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize : '15px',
-    width: '20%',
-    display: 'flex',
-    margin: 'auto',
-    marginBottom: '10px',
-    paddingBottom: '10px',
-    textAlign: 'center',
-    backgroundColor: '#FFBCBC',
-    letterSpacing: '0.5rem',
-    '&:hover': {
-            backgroundColor: '#fff',
-            color:'#FFAAAA',
-            boxShadow: '0 0 0 0.2rem #FFAAAA',
-          },
-  }
-}));
-const SkinProducts = () => {
-    const classes = useStyles();
-    const breakPoints = [
-        { width: 1, itemsToShow: 1, pagination: false },
-        { width: 500, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 3, itemsToScroll: 2,  pagination: false },
-    ];
-    
-return (
-        <> 
-                <Carousel breakPoints={breakPoints} styles={{marginTop: '900px'}}>
-                {Products.map((product) => {
-                    return(     
-                        // <Link to='/'>
-                             <Skinproduct product={product} /> 
-                       
-                    );
-                })}        
-                 </Carousel>  
-          
-            <Button variant="contained" size="large" disableElevation className={classes.ButtonStyles}>
-                View More                   
-            </Button>
-        </>
-    )
-}
-export default SkinProducts;
+
+export default Products;

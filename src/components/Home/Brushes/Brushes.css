@@ -12,14 +12,10 @@
   height: 700px;
 }
 .Brush {
-  background-color: #c6f850;
   border-radius: 8px;
-  display: flex;
   background-size: cover;
   background-position: center;
-  align-items: flex-start;
   position: relative;
-  height: 100%;
 }
 .brush-product-details {
   position: absolute;
@@ -36,6 +32,18 @@
   font-size: 20px;
   opacity: 0;
 }
+.brush-product-details:hover {
+  opacity: 1;
+}
+
+.brush-product-details > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+.brush-product-details:hover > * {
+  transform: translateY(0);
+}
+
 .Brush-icons {
   display: flex;
   flex-direction: column;
@@ -59,21 +67,10 @@
   background-color: white;
   box-shadow: 0 0 0 0.1rem #eccdc7;
 }
-.brush-product-details:hover {
-  opacity: 1;
-}
-.brush-product-details > * {
-  transform: translateY(20px);
-  transition: transform 0.25s;
-}
-.brush-product-details:hover > * {
-  transform: translateY(0);
-}
+
 .Brush-description {
   text-align: center;
   color: white;
-  /* font-family: "Castoro", serif; */
-  /* font-family: "Roboto Slab", serif; */
   font-family: "Playfair Display", serif;
   letter-spacing: 0.2rem;
   margin-bottom: 10px;
@@ -113,7 +110,6 @@
   }
   .Brushes {
     grid-template-rows: repeat(10, 1fr);
-    /* grid-template-columns: repeat(1, 1fr); */
     grid-template-columns: repeat(2, 1fr);
     height: 700px;
   }

@@ -74,9 +74,7 @@ const Face = ({product}) => {
               {product.name} 
             </Typography>
             <Typography variant="body1" color="textSecondary" component="p" className= {classes.description}>
-              {product.des}
-              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.   */}
-              
+              {product.des} 
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {product.rating}
