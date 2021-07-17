@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontWeight: 'bold',
     fontSize : '15px',
-    width: '20%',
+    ///width: '20%',
     display: 'flex',
     margin: 'auto',
     marginBottom: '10px',

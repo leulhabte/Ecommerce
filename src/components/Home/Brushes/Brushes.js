@@ -23,27 +23,27 @@ const Brushes = () => {
     }
     return (
         <div className="myBrush">
-            <div className="Brushes">                
+            <div className="Brushes">
                 {
                     BrushContent.map((Brush)=> {
                         return (
                             <div key={Brush.id} className={`Brush ${Brush.clName1} ${Brush.clName2}`}>
-                                
+
                                 <div className='brush-product-details'>
                                     <div className='Brush-description'>
                                         <h4>{Brush.Title}</h4>
-                                        <span>$ {Brush.price}</span>    
+                                        <span>$ {Brush.price}</span>
                                     </div>
                                     <div className="Brush-icons">
                                         <Button variant="p" size="small" style={{textTransform: "capitalize"}} disableElevation >Add to Cart</Button>
-                                        <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />                                
+                                        <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />
                                     </div>
                                 </div>
                             </div>
                         )
                     })
                 }
-                
+
 
             </div>
         </div>

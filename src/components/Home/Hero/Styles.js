@@ -2,10 +2,9 @@ import {makeStyles} from '@material-ui/core/styles'
 import image from './uf.jpg'
 import img1 from './face.jpg'
 import img2 from './face11.jpg'
-import img3 from './beauti.jpg'
 import img4 from './img4.jpg'
 import img6 from './img6.jpg'
-
+const img = 'https://source.unsplash.com/4nulm-JUYFo'
 export default makeStyles((theme) => ({
 
     root:{
@@ -20,7 +19,7 @@ export default makeStyles((theme) => ({
       backgroundPosition:'center',
       backgroundSize:'cover',
       backgroundRepeat:'no-repeat',
-      backgroundImage:`url(${img3})`,
+      backgroundImage:`url(${img})`,
       minHeight:'100vh',
       width: '100vw',
       marginTop:'-105px',

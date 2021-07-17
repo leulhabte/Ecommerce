@@ -4,7 +4,7 @@ import Navbar from '../Nav/Navbar'
 import img4 from './img4.jpg'
 import Aos from 'aos'
 import classnames from 'classnames'
-import { display } from '@material-ui/system'
+
 const Hero = () => {
   const classes = useStyles()
   const [animate , setAnimate ] = useState(false)
