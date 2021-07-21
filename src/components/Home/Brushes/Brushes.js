@@ -3,9 +3,6 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { GridList, GridListTile, Button} from '@material-ui/core';
 import { AddShoppingCart, Favorite} from '@material-ui/icons';
 import './Brushes.css';
-// import * as React from 'react';
-// import ImageList from '@material-ui/core/ImageList';
-// import ImageListItem from '@material-ui/core/ImageListItem';
 
 const Brushes = () => {
     const FavoriteStyles = {
@@ -35,7 +32,7 @@ const Brushes = () => {
                                         <span>$ {Brush.price}</span>
                                     </div>
                                     <div className="Brush-icons">
-                                        <Button variant="p" size="small" style={{textTransform: "capitalize"}} disableElevation >Add to Cart</Button>
+                                        <Button variant="p" size="small" style={{textTransform: "capitalize"}} disableElevation className="button" >Add to Cart</Button>
                                         <Favorite style={{margin: 'auto', color: 'rgb(240, 239, 234)'}} onClick={AddtoFavorite} />
                                     </div>
                                 </div>

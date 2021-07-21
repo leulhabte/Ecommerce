@@ -5,7 +5,8 @@ export default makeStyles((theme) => ({
     position: 'relative',
     overflow: 'hidden',
     marginTop: '90px',
-    maxWidth: '400px'
+    width: '100%'
+    // maxWidth: '400px'
   },
   cardContent: {
     display: 'flex',
@@ -21,7 +22,6 @@ export default makeStyles((theme) => ({
     border: '1px solid lightgrey',
     textTransform:'uppercase',
     fontWeight:'bold',
-    color:'#FFAAAA',
     '&:hover': {
       border: '2px solid #FFAAAA',
       backgroundColor: '#fff',
@@ -41,21 +41,10 @@ export default makeStyles((theme) => ({
   },
   Favorite: {
     position: 'absolute',
-    top: '10px',
-    right: '20px',
+    top: '1px',
+    right: '1px',
     display: 'flex',
     flexDirection: 'column',
     color: 'rgb(240, 239, 234)'
   },
-  // favoriteText: {
-  //   position: 'relative',
-  //   // display: 'none',
-  //   fontSize: '10px',
-  //   top: '-10px'
-
-
-
-  // }
-
-
 }));

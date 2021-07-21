@@ -69,10 +69,12 @@ nav {
   letter-spacing: var(--spacing);
   display: block;
   transition: 0.3s;
+  padding: 10px;
 }
 .links a:hover {
   background: #fde3de;
   padding-left: 1.5rem;
+  text-decoration: none;
 }
 
 .nav-icons {
@@ -102,11 +104,25 @@ nav {
   margin: 0 5px 0 3px;
   color: #fac9bf;
 }
-
+.nav-icon-login > .login {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  transition: 0.2s;
+  visibility: hidden;
+  background-color: lightgrey;
+  top: -20px;
+  margin-left: 20px;
+  height: 100px;
+  width: 50px;
+  position: absolute;
+  padding: 10px;
+}
 .links-container {
   height: 0;
   overflow: hidden;
   transition: var(--transition);
+  z-index: 1000;
 }
 .show-container {
   height: 15rem;
@@ -116,14 +132,17 @@ nav {
   .searchSpace {
     display: none;
   }
+  .links-container {
+    background-color: rgb(240, 239, 234);
+  }
 }
 @media (min-width: 800px) {
   .nav-container {
     display: flex;
     align-items: baseline;
     overflow: hidden;
-    /* position: sticky;
-    top: 0; */
+    position: sticky;
+    top: 0;
   }
 
   .searchSpace {
@@ -140,7 +159,7 @@ nav {
     height: 40px;
   }
   .nav-icon:hover > .searchSpace {
-    width: 130px;
+    width: 170px;
     height: 20px;
     border: 1px solid #fde3de;
     border-radius: 5px;
@@ -149,6 +168,28 @@ nav {
     outline: none;
     margin: 2px;
     padding: 10px;
+  }
+
+  .nav-icon-login {
+    display: flex;
+    position: relative;
+  }
+  .nav-icon-login > .login {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    transition: 0.2s;
+    visibility: hidden;
+    background-color: lightgrey;
+    top: -20px;
+    margin-left: 20px;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    padding: 10px;
+  }
+  .nav-icon-login:hover > .login {
+    visibility: visible;
   }
 
   .nav-center {
@@ -179,10 +220,9 @@ nav {
   }
   .links a {
     margin: 25px;
-    padding: 0;
-    /* margin: 0 0.5rem; */
     font-size: 20px;
     display: inline;
     overflow: hidden;
+    text-decoration: none;
   }
 }

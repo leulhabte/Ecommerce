@@ -10,18 +10,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
 import StarRatings from 'react-star-ratings';
 
-const theme = createMuiTheme({
-    typograph: { 
-    // fontFamily: [
-    //   'Nunito',
-    //   'Roboto',
-    //   '"Helvetica Neue"',
-    //   'Arial',
-    //   'sans-serif'
-    // ].join(','),
-}
 
-});
 const Skinproduct = ({ product }) => {
     const classes = useStyles();
 
@@ -33,22 +22,9 @@ const Skinproduct = ({ product }) => {
             e.target.style.color = ''
         }
     }
-    var width = 300;
-    var difference = 2;
-    var intervalId = 0;
 
     const changeImage = (e) => {
        e.currentTarget.src = product.image2;
-       intervalId = setInterval(zoomIn(e), 20); 
-    }
-    const zoomIn = (e) => {
-        if(width < 320) {
-            width = width + difference;
-            
-        }
-        else {
-            clearInterval(intervalId);
-        }
     }
     return (
         
@@ -62,11 +38,11 @@ const Skinproduct = ({ product }) => {
                               
                              <Favorite onClick={AddtoFavorite} />
                         </div> */}
-                        <IconButton className={classes.Favorite}>
-                            <Favorite />
+                        <IconButton className={classes.Favorite} onClick={AddtoFavorite}>
+                            <Favorite  />
                         </IconButton>           
             </div>
-             <ThemeProvider theme={theme}>     
+             <ThemeProvider>     
                <CardContent className={classes.cardContent}>
                     <div>
                         <Typography variant="body1" color="textSecondary" component="p" style={{fontWeight:'bold', textTransform:'uppercase', margin : '10px 0 10px 0'}}>

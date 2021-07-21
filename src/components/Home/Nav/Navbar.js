@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars, FaUser, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import links  from './data';
-import { Link, BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './Navbar.css';
+import { Link } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false);
     const linksContainerRef = useRef(null);
@@ -19,9 +21,17 @@ const Navbar = () => {
     } else {
       linksContainerRef.current.style.height = '0px';
     }
-  }, [showLinks]);
+  }, [showLinks]); 
 
+  const useStyles = makeStyles((theme) => ({
+    links: {
+        textDecoration: 'none'
+    }
+  }))
+
+     const classes = useStyles();
     return (
+       
         <nav style={{position:'sticky'}}>
                <div className='nav-container' >
                 <div className="nav-center">
@@ -33,16 +43,22 @@ const Navbar = () => {
                     </div>
                     
                     <div className='links-container show-container' ref={linksContainerRef}>
-                        <Router>
+               
                             <ul className='links' ref={linksRef}>
                                 
                                 <li>
-                                    <Link to='/'>BestSellers</ Link>
+                                    {/* <Link to='/'>BestSellers</ Link>
                                     <Link to='/'>Looks</ Link>
                                     <Link to='/'>Lips</ Link>
                                     <Link to='/'>Eyes</ Link>
-                                    <Link to='/skinsproductpage'>Skin</ Link>
-                                    <Link to='/'>Brushes</ Link>
+                                    <Link to='/skinproductspage'>Skin</ Link>
+                                    <Link to='/'>Brushes</ Link> */}
+                                    <Link  className = {classes.links} href='/bestsellers'>BestSellers</ Link>
+                                    <Link  className = {classes.links} href='/looks'>Looks</ Link>
+                                    <Link  className = {classes.links} href='/'>Lips</ Link>
+                                    <Link  className = {classes.links} href='/'>Eyes</ Link>
+                                    <Link  className = {classes.links} href="/skinproductspage">Skin</ Link>
+                                    <Link  className = {classes.links} href='/brushproductspage'>Brushes</ Link>
                                 </li>
                                 {/* {links.map((link) => {
                                 const { id, url, name } = link;
@@ -54,7 +70,6 @@ const Navbar = () => {
                                 );
                                 })} */}
                             </ul>
-                        </Router>
                     </div>    
                 </div>
                 
@@ -70,9 +85,16 @@ const Navbar = () => {
                        <FaShoppingCart />
                        <span>0</span>
                    </li>
-                   <li className="nav-icon">
+                   <li className="nav-icon nav-icon-login">
                     <FaUser />
-                       </li>
+                    <Router>
+                    <div className="login">
+
+                        <Link to='/signup'>Sign up</Link>
+                        <Link to='/login'>Login</Link>
+                    </div>
+                    </Router>
+                    </li>
                 </ul>             
                    
                 </div>

@@ -10,6 +10,8 @@ import BestSellerSingle from './components/Home/BestSellers/BestSellerSingle';
 import BestSellersAll from './components/Home/BestSellers/BestSellersAll';
 import BestSellers from './components/Home/BestSellers/BestSellers';
 import { Looks } from '@material-ui/icons';
+import SkinProductPage from './components/Skin/SkinProductPage';
+import BrushesSinglePage from './components/Brush-single-page/BrushesSinglePage'
 const App = () => {
     return (
 
@@ -21,6 +23,8 @@ const App = () => {
           <Route path = '/' component ={Home}  exact/>
           <Route path ='/bestsellers' component = {BestSellersAll} />
           <Route path ='/looks' component={LookSingle} />
+          <Route path ='/skinproductspage' component={SkinProductPage} />
+          <Route path = '/brushproductspage' component={BrushesSinglePage} />
         </Switch>
 
       </Router>
