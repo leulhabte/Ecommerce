@@ -1,7 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import useStyles from './Styles'
-import Navbar from '../Nav/Navbar'
-import img4 from './img4.jpg'
 import Aos from 'aos'
 import classnames from 'classnames'
 

@@ -1,6 +1,4 @@
 import {makeStyles} from '@material-ui/core/styles'
-import image from './uf.jpg'
-import img1 from './face.jpg'
 import img2 from './face11.jpg'
 import img4 from './img4.jpg'
 import img6 from './img6.jpg'
