@@ -22,21 +22,16 @@ const SinglePage =({product}) =>{
         media:{
             height: '350px',
             backgroundImage:`url(${product.image})`,
-            backgroundSize:'cover',
+            backgroundSize:'100% 100%',
             backgroundPosition:'center center',
             backgroundRepeat:'no-repeat',
             marginBottom:'10px',
             cursor:'pointer',
-            transition:'transform ease-out 0.3s',
+            transition:'all ease-out 0.3s',
             overflow: 'hidden',
             '&:hover' :{
-                transform: `scale(${1.02})`
+                backgroundSize: '105% 105%'
             }
-            // width: '100%',
-            // maxWidth: '100%',
-            // height: "100%",
-            // transform:`scale(${scale})`, 
-            // transition: 'transform ease-out 0.5s'
         },
         content:{
             textAlign:'center',
@@ -103,21 +98,11 @@ const addToFavorite = (e) =>{
 const classes = useStyles()
 const handleBgChange = (e) =>{
     e.target.style.backgroundImage =`url(${product.image2})`
-    // e.target.src = product.image2
-   // e.target.className = classnames(classes.media,classes.media)
-//    setScale( scale > 1 ? 1 : 1.2)
+
 }
 const handleBgLeave = (e) =>{
     e.target.style.backgroundImage =`url(${product.image})` 
-    // e.target.src = product.image 
-//    setScale(1)
 }
-const change = (e) =>{
-    //e.target.className = classes.anim
-     setScale( scale > 1 ? 1 : 1.2)
-    //  alert('bitch')
-    //  console.log('loaded')
-  }
     return (
         <div className={classes.container} >
            <div className={classes.mediaContainer}>
@@ -125,7 +110,6 @@ const change = (e) =>{
                 <div className={classnames(classes.media)}
                         onMouseEnter={handleBgChange}
                         onMouseLeave={handleBgLeave}
-                    //    style={{  transform:`scale(${scale})`, transition: 'transform ease-out 0.5s' }}
                 >
                         
                 </div>

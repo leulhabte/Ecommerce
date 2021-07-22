@@ -88,11 +88,11 @@ const Navbar = () => {
                    <li className="nav-icon nav-icon-login">
                     <FaUser />
                     <Router>
-                    <div className="login">
+                    {/* <div className="login">
 
                         <Link to='/signup'>Sign up</Link>
                         <Link to='/login'>Login</Link>
-                    </div>
+                    </div> */}
                     </Router>
                     </li>
                 </ul>             
