@@ -4,11 +4,7 @@ export default makeStyles((theme) => ({
 
     liptitle: {
     color: '#CEBDB3',
-    fontFamily: ['"Playfair Display"', 'serif'].join(','),
-    display: 'flex',
-    justifyContent:'center',
-    textAlign:'center',
-    alignItems: 'center',
+    fontFamily: 'Keania One',
     fontSize: '2rem',
     },
     lipheder: {
@@ -17,14 +13,8 @@ export default makeStyles((theme) => ({
 
     },
     Title: {
-        // fontFamily: ['"Playfair Display"', 'serif'].join(','),
-        // display: 'flex',
-        // justifyContent:'center',
-        // // textAlign:'center',
-        // alignItems: 'center',
         padding:'25px',
         color:'#666',
-       // fontSize:'40px',
         fontFamily: `'Playfair Display SC', serif`,
         textTransform:'uppercase'
     },
@@ -42,21 +32,13 @@ export default makeStyles((theme) => ({
    },
    skin:{
     backgroundColor: 'rgb(246,243, 240)',
-    //margin:'100px 0',
-    paddingBottom: '25px',
-    paddingTop:'45px'
+    margin:'100px 0',
+    paddingBottom: '10px'
    },
    face:{
     //margin:'50px auto',
-       paddingBottom:'5rem',
-       marginTop:'170px ',
-       backgroundColor: 'rgb(247,234, 232)',
-       paddingTop: '45px'
-   },
-   brushes:{
-    paddingTop: '45px'
-   },
-   lips:{
-       paddingTop:'45px'
+       //padding:'5rem 0'
+       margin:'100px 0',
+       backgroundColor: 'rgb(247,234, 232)'
    }
 }));

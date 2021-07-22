@@ -38,9 +38,7 @@ export default makeStyles((theme) => ({
   },
   skinProductsImage :{
     position: 'relative',
-    '&:hover':{
-      transfrom : `scale(${1.2})`
- }
+    
   },
   Favorite: {
     position: 'absolute',

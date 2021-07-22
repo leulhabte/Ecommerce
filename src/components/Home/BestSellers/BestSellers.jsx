@@ -157,7 +157,7 @@ const BestSellers = () => {
   const getLookBtn = (
       <Button variant="contained" size="medium" disableElevation 
        className={classes.btn} 
-        style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
+        // style ={{visibility : btnVisible ? 'visible' : 'hidden'}}
       onMouseEnter={handlebtnVisibility} onMouseLeave={handlebtnHide}
       > Buy Now</Button>
     );

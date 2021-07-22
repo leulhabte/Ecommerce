@@ -45,10 +45,11 @@ const SinglePage =({product}) =>{
             boxShadow: 'inset 0 0 0 0 #FFF',
             transition: 'ease-out 0.6s',
             outline: 'none',
-            border: 'none',
+            border: '1px solid #FFAAAAEA',
             '&:hover':{
             color:'#FFAAAA',
             boxShadow: 'inset 290px 0 0 0 #FFF',
+            
             }
         },
         button: {

@@ -1,15 +1,17 @@
 import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import {Card,CardActions,CardContent,CardHeader,CardMedia,
-  Typography,CardActionArea, Button} from '@material-ui/core'
+import {Card,CardContent,CardMedia,
+  Typography,CardActionArea, } from '@material-ui/core'
 import { Favorite } from '@material-ui/icons';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import classnames from 'classnames';
 const BestSeller = ({product}) => {
 
+  //states
   const [fav_color,setFavColor] = useState(false)
   const [bigBtn,setBigBtn]  = useState(false)
+
+  //styles
   const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: '350px',
