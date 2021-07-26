@@ -7,7 +7,8 @@ import { BrowserRouter as
    Router , Route , Switch } from 'react-router-dom';
 import LookSingle from './components/Home/Looks/LookSingle';
 import BestSellersAll from './components/Home/BestSellers/BestSellersAll';
-
+import SkinProductPage from './components/Skin/SkinProductPage';
+import BrushesSinglePage from './components/Brush-single-page/BrushesSinglePage';
 const App = () => {
     return (
 
